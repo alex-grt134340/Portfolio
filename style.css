@@ -1,23 +1,32 @@
 /* =========================
    Style global
 ========================= */
-body {
-    font-family: Arial, sans-serif;
+body 
+{
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     background-color: #0f172a;
     color: white;
     margin: 0;
     padding: 0;
 }
 
+h1, h2 
+{
+    font-family: 'Poppins', sans-serif;
+}
+
 /* =========================
    Header
 ========================= */
-header {
+header 
+{
     background-color: #020617;
     padding: 60px 20px;
 }
 
-.header-container {
+.header-container 
+{
     display: flex;
     align-items: center;
     justify-content: space-between; /* espace entre photo/texte et bouton */
@@ -27,7 +36,8 @@ header {
     position: relative;
 }
 
-.cv-button {
+.cv-button
+{
     background-color: #38bdf8;
     color: #020617;
     padding: 10px 20px;
@@ -37,18 +47,21 @@ header {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cv-button:hover {
+.cv-button:hover 
+{
     background-color: #22d3ee;
     transform: scale(1.05);
 }
 
-.header-text {
+.header-text 
+{
     display: flex;
     flex-direction: column;    /* empile h1 et description verticalement */
     justify-content: center;   /* centre verticalement si besoin */
 }
 
-.profile-pic-wrapper {
+.profile-pic-wrapper 
+{
     position: relative;
     width: 190px; /* légèrement plus grand que la photo */
     height: 190px;
@@ -57,7 +70,8 @@ header {
     justify-content: center;
 }
 
-.profile-pic-wrapper::before {
+.profile-pic-wrapper::before 
+{
     content: "";
     position: absolute;
     top: 0;
@@ -70,7 +84,8 @@ header {
     animation: rotateGradient 4s linear infinite;
 }
 
-.profile-pic {
+.profile-pic 
+{
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -80,30 +95,36 @@ header {
      border: none; 
 }
 
-@keyframes rotateGradient {
+@keyframes rotateGradient 
+{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-.header-text h1 {
+.header-text h1 
+{
     margin: 0;
     font-size: 2em;
     color: #38bdf8;
 }
 
-.header-text .description {
+.header-text .description 
+{
     margin-top: 10px;
     font-size: 1.1em;
     color: #cbd5e1; /* gris clair pour le descriptif */
 }
 
-@media (max-width: 700px) {
-    .header-container {
+@media (max-width: 700px) 
+{
+    .header-container 
+    {
         flex-direction: column;
         text-align: center;
     }
 
-    .profile-pic {
+    .profile-pic 
+    {
         margin-bottom: 20px;
     }
 }
@@ -112,18 +133,21 @@ header {
 /* =========================
    Sections
 ========================= */
-section {
+section 
+{
     max-width: 1100px; /* ou 1200px */
     margin: auto;
     padding: 60px 20px;
     position: relative;
 }
 
-h2 {
+h2 
+{
     color: #38bdf8;
 }
 
-.project {
+.project 
+{
     background-color: #1e293b;
     padding: 20px;
     margin-top: 15px;
@@ -133,7 +157,8 @@ h2 {
 /* =========================
    Animation du dégradé
 ========================= */
-@keyframes gradientAnimation {
+@keyframes gradientAnimation 
+{
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -142,7 +167,8 @@ h2 {
 /* =========================
    Triangles animés entre sections
 ========================= */
-section + section::before {
+section + section::before 
+{
     content: "";
     position: absolute;
     top: -50px;
@@ -162,26 +188,30 @@ section + section::before {
 /* =========================
    Skills
 ========================= */
-.skills-container {
+.skills-container 
+{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     text-align: center;
 }
 
-.icon {
+.icon 
+{
     position: relative;
     width: 55px;
     cursor: pointer;
 }
 
-.icon img {
+.icon img 
+{
     width: 100%;
     transition: transform 0.3s ease;
 }
 
 /* Texte caché par défaut */
-.icon span {
+.icon span 
+{
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -198,16 +228,19 @@ section + section::before {
 }
 
 /* Hover */
-.icon:hover img {
+.icon:hover img 
+{
     transform: scale(1.15);
 }
 
-.icon:hover span {
+.icon:hover span 
+{
     opacity: 1;
     transform: translateX(-50%) translateY(-4px);
 }
 
-.skill {
+.skill 
+{
     background-color: #1e293b;
     padding: 15px 25px;
     border-radius: 10px;
@@ -217,14 +250,16 @@ section + section::before {
     min-width: 180px;
 }
 
-.skill h3 {
+.skill h3 
+{
     margin-bottom: 15px;
     color: #38bdf8;
     font-size: 1.2em;
 }
 
 /* Conteneur des icônes */
-.skill-icons {
+.skill-icons 
+{
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -232,7 +267,8 @@ section + section::before {
 }
 
 /* Icônes */
-.skill-icons img {
+.skill-icons img 
+{
     width: 40px;
     height: 40px;
     object-fit: contain;
@@ -240,27 +276,34 @@ section + section::before {
 }
 
 /* Effet au survol */
-.skill-icons img:hover {
+.skill-icons img:hover 
+{
     transform: scale(1.15);
 }
 
-.skill {
+.skill
+{
     animation: fadeUp 0.8s ease forwards;
 }
 
-@keyframes fadeUp {
-    from {
+@keyframes fadeUp 
+{
+    from 
+    {
         opacity: 0;
         transform: translateY(20px);
     }
-    to {
+    to 
+    {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media (max-width: 800px) {
-    .skills-container {
+@media (max-width: 800px) 
+{
+    .skills-container 
+    {
         grid-template-columns: 1fr; /* 1 colonne sur mobile */
     }
 }
@@ -268,7 +311,8 @@ section + section::before {
 /* =========================
    Soft & Hard Skills
 ========================= */
-.soft-skills, .hard-skills {
+.soft-skills, .hard-skills 
+{
     list-style: none;
     padding: 0;
     margin: 30px auto 0;
@@ -279,7 +323,8 @@ section + section::before {
     gap: 15px 40px;
 }
 
-.soft-skills li, .hard-skills li {
+.soft-skills li, .hard-skills li 
+{
     background-color: #1e293b;
     padding: 12px 16px;
     border-radius: 8px;
@@ -289,32 +334,38 @@ section + section::before {
     display: flex;
     align-items: center;
     gap: 10px;
-    opacity: 0; /* pour l'animation */
-    transform: translateY(20px);
+
+    /* Visible */
+    opacity: 1;
+
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Hover */
-.soft-skills li:hover, .hard-skills li:hover {
+.soft-skills li:hover, .hard-skills li:hover 
+{
     transform: translateY(-3px);
     background-color: #273449;
 }
 
 /* Icones */
-.soft-skills li .icon, .hard-skills li .icon {
+.soft-skills li .icon, .hard-skills li .icon 
+{
     font-size: 1.2em;
 }
 
 /* =========================
    Animation au scroll
 ========================= */
-.scroll-animate {
+.scroll-animate 
+{
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.scroll-animate.show {
+.scroll-animate.show 
+{
     opacity: 1;
     transform: translateY(0);
 }
@@ -322,8 +373,10 @@ section + section::before {
 /* =========================
    Responsive
 ========================= */
-@media (max-width: 600px) {
-    .soft-skills, .hard-skills {
+@media (max-width: 600px) 
+{
+    .soft-skills, .hard-skills 
+    {
         grid-template-columns: 1fr; /* 1 colonne sur mobile */
     }
 }
@@ -332,13 +385,15 @@ section + section::before {
    À propos de moi
 ========================= */
 
-.about-me {
+.about-me 
+{
     max-width: 1100px;
     margin: auto;
     padding: 60px 20px;
 }
 
-.about-box {
+.about-box 
+{
     background: #1e293b;
     border-radius: 15px;
     padding: 30px;
@@ -350,7 +405,8 @@ section + section::before {
 }
 
 /* Petit effet hover */
-.about-box:hover {
+.about-box:hover 
+{
     transform: translateY(-5px);
     transition: 0.3s ease;
 }
@@ -358,7 +414,8 @@ section + section::before {
 /* =========================
    Contacts
 ========================= */
-.contact-icon {
+.contact-icon 
+{
     width: 30px;      /* largeur de l'icône */
     height: 30px;     /* hauteur de l'icône */
     vertical-align: middle; /* aligne avec le texte */
@@ -366,7 +423,8 @@ section + section::before {
 }
 
 /*bar de boutons */
-.navbar {
+.navbar 
+{
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -374,7 +432,8 @@ section + section::before {
     background-color: #222;
 }
 
-.navbar a {
+.navbar a 
+{
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -383,6 +442,73 @@ section + section::before {
     transition: 0.3s;
 }
 
-.navbar a:hover {
+.navbar a:hover 
+{
     background-color: #555;
+}
+
+/*image de creajeux avec ma situation actuelle */
+.about-section 
+{
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px 40px;
+}
+
+.about-section h2 
+{
+    color: #38bdf8;
+    margin: 0 0 10px 0;
+}
+
+.about-content 
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.about-text 
+{
+    flex: 1;
+}
+
+.about-text p 
+{
+    margin-top: 0;
+}
+
+.school-image 
+{
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.school-image img 
+{
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.school-image img:hover 
+{
+    transform: scale(1.03);
+}
+
+/* Sur téléphone */
+@media (max-width: 700px) 
+{
+    .about-content  
+    {
+        flex-direction: column;
+    }
+
+    .school-image 
+    {
+        width: 100%;
+        max-width: 400px;
+    }
 }
