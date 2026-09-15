@@ -36,6 +36,20 @@ header
     position: relative;
 }
 
+/*a mettre en place */
+.navigation 
+{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 2);
+}
+/*a mettre en place */
+
 .cv-button
 {
     background-color: #38bdf8;
