@@ -14,6 +14,8 @@ body
 h1, h2 
 {
     font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.3); /* Effet émanation lumineuse */
+    letter-spacing: 0.5px;
 }
 
 /* =========================
@@ -36,19 +38,41 @@ header
     position: relative;
 }
 
-/*a mettre en place */
 .navigation 
 {
-    position: relative;
-    width: 400px;
-    height: 70px;
-    background: var(--primary-color);
     display: flex;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 2);
+    gap: 15px;
+    background: rgba(2, 6, 23, 0.5); /* Fond semi-transparent */
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    
+    /* On centre la barre horizontalement dans la page */
+    max-width: fit-content;
+    margin: 30px auto; 
+    
+    border-radius: 30px; 
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
-/*a mettre en place */
+
+.navigation a 
+{
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 0.95em;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effet Hover sur les liens de navigation */
+.navigation a:hover 
+{
+    color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.1);
+}
 
 .cv-button
 {
@@ -106,7 +130,7 @@ header
     object-fit: cover;
     position: relative;
     z-index: 1; /* au-dessus du dégradé */
-     border: none; 
+    border: none; 
 }
 
 @keyframes rotateGradient 
@@ -143,29 +167,20 @@ header
     }
 }
 
-
-/* =========================
-   Sections
-========================= */
-section 
-{
-    max-width: 1100px; /* ou 1200px */
-    margin: auto;
-    padding: 60px 20px;
-    position: relative;
-}
-
 h2 
 {
     color: #38bdf8;
 }
 
-.project 
+.project h3 
 {
-    background-color: #1e293b;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 10px;
+    color: #38bdf8;
+    margin-top: 0;
+}
+
+.project p 
+{
+    color: #cbd5e1;
 }
 
 /* =========================
@@ -179,24 +194,22 @@ h2
 }
 
 /* =========================
-   Triangles animés entre sections
+   Lignes néons épurées entre sections
 ========================= */
 section + section::before 
 {
     content: "";
     position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 50px;
+    top: 0;
+    left: 10%;
+    width: 80%; 
+    height: 1px;
     z-index: 1;
 
-    background: linear-gradient(135deg, #38bdf8, #6366f1, #22d3ee);
-    background-size: 300% 300%;
-    animation: gradientAnimation 5s ease infinite;
-
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: linear-gradient(90deg, transparent, #38bdf8, #6366f1, #22d3ee, transparent);
+    background-size: 200% 100%;
+    animation: gradientAnimation 8s linear infinite;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
 }
 
 /* =========================
@@ -241,7 +254,6 @@ section + section::before
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Hover */
 .icon:hover img 
 {
     transform: scale(1.15);
@@ -251,17 +263,6 @@ section + section::before
 {
     opacity: 1;
     transform: translateX(-50%) translateY(-4px);
-}
-
-.skill 
-{
-    background-color: #1e293b;
-    padding: 15px 25px;
-    border-radius: 10px;
-    font-size: 1.1em;
-    text-align: center;
-    color: #e5e7eb;
-    min-width: 180px;
 }
 
 .skill h3 
@@ -297,7 +298,7 @@ section + section::before
 
 .skill
 {
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeUp 0.8s ease both;
 }
 
 @keyframes fadeUp 
@@ -337,29 +338,13 @@ section + section::before
     gap: 15px 40px;
 }
 
+/* Alignement de l'icône et du texte du li */
 .soft-skills li, .hard-skills li 
 {
-    background-color: #1e293b;
-    padding: 12px 16px;
-    border-radius: 8px;
-    text-align: left;
-    font-size: 1em;
-    color: #e5e7eb;
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    /* Visible */
-    opacity: 1;
-
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover */
-.soft-skills li:hover, .hard-skills li:hover 
-{
-    transform: translateY(-3px);
-    background-color: #273449;
+    gap: 12px;
+    text-align: left;
 }
 
 /* Icones */
@@ -398,31 +383,11 @@ section + section::before
 /* =========================
    À propos de moi
 ========================= */
-
 .about-me 
 {
     max-width: 1100px;
     margin: auto;
     padding: 60px 20px;
-}
-
-.about-box 
-{
-    background: #1e293b;
-    border-radius: 15px;
-    padding: 30px;
-    color: #e5e7eb;
-    font-size: 1.05em;
-    line-height: 1.6;
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-/* Petit effet hover */
-.about-box:hover 
-{
-    transform: translateY(-5px);
-    transition: 0.3s ease;
 }
 
 /* =========================
@@ -436,32 +401,7 @@ section + section::before
     margin-right: 10px;      /* espace entre l'icône et le texte */
 }
 
-/*bar de boutons */
-.navbar 
-{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background-color: #222;
-}
-
-.navbar a 
-{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.navbar a:hover 
-{
-    background-color: #555;
-}
-
-/*image de creajeux avec ma situation actuelle */
+/* image de creajeux avec ma situation actuelle */
 .about-section 
 {
     max-width: 1100px;
@@ -525,4 +465,72 @@ section + section::before
         width: 100%;
         max-width: 400px;
     }
+}
+
+/* =========================
+   Mise en page des projets
+========================= */
+.projects-container 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur PC */
+    gap: 25px; /* Espace entre chaque carte */
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) 
+{
+    .projects-container 
+    {
+        grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+    }
+}
+
+
+/* =========================
+   Sections & Glassmorphism
+========================= */
+section 
+{
+    max-width: 1100px; 
+    margin: auto;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.about-box, 
+.project, 
+.skill, 
+.soft-skills li, 
+.hard-skills li 
+{
+    background: rgba(30, 41, 59, 0.45); 
+    backdrop-filter: blur(12px);         
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 8px 32px 0 rgba(2, 6, 23, 0.3);
+    
+    /* Structures de base communes */
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* Effets Hover unifiés et fluides */
+.about-box:hover, 
+.project:hover, 
+.skill:hover, 
+.soft-skills li:hover, 
+.hard-skills li:hover 
+{
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4); 
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+    background: rgba(30, 41, 59, 0.6);
 }
