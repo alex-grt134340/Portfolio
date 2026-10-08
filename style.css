@@ -1,19 +1,20 @@
 /* ==========================================================================
-   VARIABLES & CONFIGURATION DU THÈME
+   VARIABLES & CONFIGURATION DU THÈME (VERSION BORDEAUX)
    ========================================================================== */
 :root {
-    --bg-main: #0f172a;
-    --bg-header: #020617;
-    --bg-card: rgba(30, 41, 59, 0.45);
-    --bg-card-hover: rgba(30, 41, 59, 0.6);
+    --bg-main: #140709;          
+    --bg-header: #0a0203;       
+    --bg-card: rgba(39, 15, 19, 0.45);   
+    --bg-card-hover: rgba(53, 18, 22, 0.6); 
     
-    --primary: #38bdf8;
-    --primary-glow: rgba(56, 189, 248, 0.3);
-    --secondary: #6366f1;
-    --accent: #22d3ee;
+    --primary: #b22030;          
+    --primary-glow: rgba(178, 32, 48, 0.35); 
+    --secondary: #721c24;        
+    --accent: #e5b869;           
+    --accent-glow: rgba(229, 184, 105, 0.3);
     
     --text-main: #ffffff;
-    --text-muted: #cbd5e1;
+    --text-muted: #e2d1d3;       
     
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Poppins', sans-serif;
@@ -27,7 +28,7 @@ html {
 
 ::-selection {
     background-color: var(--primary);
-    color: var(--bg-header);
+    color: var(--text-main);
 }
 
 /* ==========================================================================
@@ -78,15 +79,15 @@ section {
     display: flex;
     justify-content: center;
     gap: 15px;
-    background: rgba(2, 6, 23, 0.5);
+    background: rgba(10, 2, 3, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 12px 25px;
     max-width: fit-content;
     margin: 30px auto; 
     border-radius: 30px; 
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(178, 32, 48, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .navigation a {
@@ -100,8 +101,8 @@ section {
 }
 
 .navigation a:hover {
-    color: var(--primary);
-    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    background-color: rgba(178, 32, 48, 0.15);
 }
 
 /* ==========================================================================
@@ -143,19 +144,20 @@ header {
 /* Bouton d'action (CV) */
 .cv-button {
     background-color: var(--primary);
-    color: var(--bg-header);
+    color: var(--text-main);
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 4px 14px var(--primary-glow);
     transition: var(--transition);
 }
 
 .cv-button:hover {
     background-color: var(--accent);
+    color: var(--bg-header);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+    box-shadow: 0 6px 20px var(--accent-glow);
 }
 
 .cv-button:active {
@@ -180,6 +182,7 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    /* Dégradé fluide allant du bordeaux profond à l'or ambré */
     background: conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary));
     z-index: 0;
     animation: rotateGradient 4s linear infinite;
@@ -196,7 +199,7 @@ header {
 }
 
 /* ==========================================================================
-   GLASSMORPHISM & CARTES UNIFIÉES (A Propos, Projets, Skills)
+   GLASSMORPHISM & CARTES UNIFIÉES
    ========================================================================== */
 .about-box, 
 .project, 
@@ -206,8 +209,8 @@ header {
     background: var(--bg-card); 
     backdrop-filter: blur(12px);         
     -webkit-backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    box-shadow: 0 8px 32px 0 rgba(2, 6, 23, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 8px 32px 0 rgba(10, 2, 3, 0.5);
     padding: 25px;
     border-radius: 12px;
     color: var(--text-main);
@@ -221,8 +224,8 @@ header {
 .soft-skills li:hover, 
 .hard-skills li:hover {
     transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.4); 
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+    border-color: rgba(178, 32, 48, 0.4); 
+    box-shadow: 0 10px 30px rgba(178, 32, 48, 0.25);
     background: var(--bg-card-hover);
 }
 
@@ -254,16 +257,16 @@ header {
     width: 100%;
     border-radius: 15px;
     object-fit: cover;
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 0 25px rgba(178, 32, 48, 0.2);
     transition: var(--transition);
 }
 
 .school-image img:hover {
-    transform: scale(1.03) rotate(1deg); /* Léger effet dynamique */
+    transform: scale(1.03) rotate(1deg);
 }
 
 /* ==========================================================================
-   COMPOSANT PROJETS
+   COMPOSANT PROJETS & SKILLS (Inchangé graphiquement, hérite des variables)
    ========================================================================== */
 .projects-container {
     display: grid;
@@ -272,9 +275,6 @@ header {
     margin-top: 30px;
 }
 
-/* ==========================================================================
-   SKILLS & COMPOSANTS SPECIFIQUES
-   ========================================================================== */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -325,8 +325,8 @@ header {
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    border: 1px solid rgba(178, 32, 48, 0.3);
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -365,6 +365,7 @@ header {
     margin-right: 10px;
 }
 
+
 /* ==========================================================================
    ANIMATIONS (Scroll & Keyframes)
    ========================================================================== */
@@ -394,7 +395,8 @@ section + section::before {
     background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
     background-size: 200% 100%;
     animation: gradientAnimation 8s linear infinite;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+    /* Halo lumineux adapté aux tons bordeaux/or */
+    box-shadow: 0 0 12px var(--primary-glow);
 }
 
 @keyframes rotateGradient {
@@ -441,19 +443,21 @@ section + section::before {
         align-items: center;
     }
 
-    .school-image 
-    {
-        width: 100%;max-width: 400px;
+    .school-image {
+        width: 100%;
+        max-width: 400px;
     }
 }
 
-@media (max-width: 600px) 
-{
-    .soft-skills, .hard-skills 
-    {
+@media (max-width: 600px) {
+    .soft-skills, .hard-skills {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   COMPOSANTS TEXTE ET CONTENU (A PROPOS & SITUATION)
+   ========================================================================== */
 
 /* --- Améliorations du texte "À propos" --- */
 .about-intro {
@@ -461,7 +465,7 @@ section + section::before {
     font-weight: 500;
     color: #fff;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 15px;
 }
 
@@ -478,7 +482,7 @@ section + section::before {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: none !important; /* On annule le fond de la liste imbriquée */
+    background: none !important; 
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -486,13 +490,13 @@ section + section::before {
 
 .profile-details .label {
     font-weight: 600;
-    color: #38bdf8; /* Couleur cyan pour les intitulés */
-    width: 140px;   /* Aligne parfaitement toutes les valeurs verticalement */
+    color: var(--accent);
+    width: 140px;          
     flex-shrink: 0;
 }
 
 .profile-details .value {
-    color: #cbd5e1;
+    color: var(--text-muted);
 }
 
 /* --- Améliorations du texte "Situation Actuelle" --- */
@@ -505,9 +509,9 @@ section + section::before {
 
 /* Style pour mettre en valeur les mots importants */
 .tech-accent {
-    color: #22d3ee;
+    color: var(--accent); /* Utilise la variable d'accent (Or) au lieu de l'ancien cyan */
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 /* Espacement global des paragraphes dans les boîtes */
@@ -515,6 +519,7 @@ section + section::before {
     margin: 0 0 12px 0;
     line-height: 1.7; /* Donne de l'air au texte */
 }
+
 .about-box p:last-child {
     margin-bottom: 0;
 }
