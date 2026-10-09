@@ -1,108 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Compétences - Goret Alexandra</title>
-        
+    <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio - Goret Alexandra</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css">
+    <!-- Anti-Flash Blanc & Anti-Flash Langue -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+
+            var savedLang = localStorage.getItem('lang') || 'fr';
+            document.documentElement.lang = savedLang;
+            
+            if (savedLang === 'en') {
+                document.documentElement.classList.add('i18n-loading');
+            }
+        })();
+    </script>
 </head>
 <body>
 
 <header>
     <div class="header-container">
         <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
         </div>
         <div class="header-text">
             <h1>Goret Alexandra</h1>
-            <p class="description">Étudiante en développement de jeux vidéo</p>
+            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
         </div>
-         <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
             Télécharger mon CV
         </a>
     </div>
 </header>
 
 <nav class="navigation">
-    <a href="index.html">Accueil</a>
-    <a href="a-propos.html">À propos de moi</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav-home">Accueil</a>
+    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+    <a href="projets.html" data-i18n="nav-projects">Projets</a>
+    <a href="contact.html" data-i18n="nav-contact">Contact</a>
+    
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+        <span id="theme-icon">☀️</span>
+    </button>
+    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+        <span id="lang-text">EN</span>
+    </button>
 </nav>
 
 <section>
-    <h2>Technical Skills</h2>
+    <h2 data-i18n="tech-skills-title">Compétences Techniques</h2>
     <div class="skills-container">
         <div class="skill">
-            <h3>Languages</h3>
+            <h3 data-i18n="cat-languages">Langages</h3>
             <div class="skill-icons">
                 <div class="icon">     
-                    <img src="assets/images/c++.png" alt="C++">
+                    <img src="assets/images/c++.png" alt="C++" width="40" height="40">
                     <span>C++</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/c.png" alt="C">
+                    <img src="assets/images/c.png" alt="C" width="40" height="40">
                     <span>C</span>
                 </div>
-                 <div class="icon">
-                    <img src="assets/images/csharp.png" alt="C#">
+                <div class="icon">
+                    <img src="assets/images/csharp.png" alt="C#" width="40" height="40">
                     <span>C#</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/sql.png" alt="SQL">
+                    <img src="assets/images/sql.png" alt="SQL" width="40" height="40">
                     <span>SQL</span>
                 </div>
             </div>
         </div>
 
         <div class="skill">
-            <h3>Engine & Frameworks</h3>
+            <h3 data-i18n="cat-engines">Moteurs & Frameworks</h3>
             <div class="skill-icons">
                 <div class="icon">
-                    <img src="assets/images/Unity.png" alt="Unity">
+                    <img src="assets/images/Unity.png" alt="Unity" width="40" height="40">
                     <span>Unity</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/SFML.png" alt="SFML">
+                    <img src="assets/images/SFML.png" alt="SFML" width="40" height="40">
                     <span>SFML</span>
                 </div>
             </div>
         </div>
 
         <div class="skill">
-            <h3>Development Tools</h3>
+            <h3 data-i18n="cat-tools">Outils de Développement</h3>
             <div class="skill-icons">
                 <div class="icon">
-                    <img src="assets/images/fmod.webp" alt="Fmod">
+                    <img src="assets/images/fmod.webp" alt="Fmod" width="40" height="40">
                     <span>Fmod</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/Tortoise.png" alt="Tortoise">
+                    <img src="assets/images/Tortoise.png" alt="Tortoise" width="40" height="40">
                     <span>Tortoise</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/Trello.png" alt="Trello">
+                    <img src="assets/images/Trello.png" alt="Trello" width="40" height="40">
                     <span>Trello</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/VisualStudio.png" alt="Visual Studio">
+                    <img src="assets/images/VisualStudio.png" alt="Visual Studio" width="40" height="40">
                     <span>Visual Studio</span>
                 </div>
                 <div class="icon">
-                    <img src="assets/images/VisualStudioCode.png" alt="Visual Studio Code">
+                    <img src="assets/images/VisualStudioCode.png" alt="Visual Studio Code" width="40" height="40">
                     <span>Visual Studio Code</span>
                 </div>
             </div>
@@ -111,28 +126,29 @@
 </section>
 
 <section>
-    <h2>Soft Skills</h2>
+    <h2 data-i18n="soft-skills-title">Savoir-être (Soft Skills)</h2>
     <ul class="soft-skills">
-        <li><span class="icon">💬</span> Communication</li>
-        <li><span class="icon">🤝</span> Teamwork</li>
-        <li><span class="icon">🚀</span> Proactive</li>
-        <li><span class="icon">📚</span> Eager to Learn</li>
-        <li><span class="icon">📝</span> Feedback Driven</li>
-        <li><span class="icon">🎯</span> Ownership</li>
+        <li><span class="list-emoji">💬</span> <span data-i18n="ss-communication">Communication</span></li>
+        <li><span class="list-emoji">🤝</span> <span data-i18n="ss-teamwork">Travail d'équipe</span></li>
+        <li><span class="list-emoji">🚀</span> <span data-i18n="ss-proactive">Proactivité</span></li>
+        <li><span class="list-emoji">📚</span> <span data-i18n="ss-eager">Soif d'apprendre</span></li>
+        <li><span class="list-emoji">📝</span> <span data-i18n="ss-feedback">À l'écoute du feedback</span></li>
+        <li><span class="list-emoji">🎯</span> <span data-i18n="ss-ownership">Autonomie & Responsabilité</span></li>
     </ul>
 </section>
 
 <section>
-    <h2>Hard Skills</h2>
-    <ul class="soft-skills hard-skills">
-        <li><span class="icon">💻</span> Programming</li>
-        <li><span class="icon">🕹️</span> Game Engines</li>
-        <li><span class="icon">🛠️</span> UI</li>
-        <li><span class="icon">⚡</span> Optimization</li>
-        <li><span class="icon">🔧</span> Debugging</li>
-        <li><span class="icon">🎨</span> Network</li>
+    <h2 data-i18n="hard-skills-title">Compétences Métier (Hard Skills)</h2>
+    <ul class="hard-skills">
+        <li><span class="list-emoji">💻</span> <span data-i18n="hs-programming">Programmation</span></li>
+        <li><span class="list-emoji">🕹️</span> <span data-i18n="hs-engines">Moteurs de jeu</span></li>
+        <li><span class="list-emoji">🛠️</span> <span data-i18n="hs-ui">Interface Utilisateur (UI)</span></li>
+        <li><span class="list-emoji">⚡</span> <span data-i18n="hs-optimization">Optimisation</span></li>
+        <li><span class="list-emoji">🔧</span> <span data-i18n="hs-debugging">Débogage</span></li>
+        <li><span class="list-emoji">🌐</span> <span data-i18n="hs-network">Réseau (Network)</span></li>
     </ul>
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>

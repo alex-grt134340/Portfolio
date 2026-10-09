@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,77 +9,103 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Anti-Flash Blanc & Anti-Flash Langue -->
+    <script>
+        (function() {
+            // 1. Gestion du thème
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+
+            // 2. Préparation de la langue pour éviter le FOUC
+            var savedLang = localStorage.getItem('lang') || 'fr';
+            document.documentElement.lang = savedLang;
+            
+            // Cache le corps de la page 1 milliseconde le temps d'appliquer les textes
+            if (savedLang === 'en') {
+                document.documentElement.classList.add('i18n-loading');
+            }
+        })();
+    </script>
 </head>
 <body>
 
 <header>
     <div class="header-container">
         <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
         </div>
         <div class="header-text">
             <h1>Goret Alexandra</h1>
-            <p class="description">Étudiante en développement de jeux vidéo</p>
+            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
         </div>
-         <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
             Télécharger mon CV
         </a>
     </div>
 </header>
 
-<body>
-
 <nav class="navigation">
-    <a href="index.html">Accueil</a>
-    <a href="a-propos.html">À propos de moi</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav-home">Accueil</a>
+    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+    <a href="projets.html" data-i18n="nav-projects">Projets</a>
+    <a href="contact.html" data-i18n="nav-contact">Contact</a>
+
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+        <span id="theme-icon">☀️</span>
+    </button>
+    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+        <span id="lang-text">EN</span>
+    </button>
 </nav>
 
 <section class="about-me">
-    <h2>À propos de moi</h2>
+    <h2 data-i18n="about-me-title">À propos de moi</h2>
     <div class="about-box">
-        <p class="lead-text">
+        <p class="lead-text" data-i18n="about-me-lead">
             Passionnée par le code et animée par une grande curiosité technique, je me définis comme une développeuse persévérante, toujours désireuse d'apprendre et d'évoluer. 
         </p>
-        <p>
+        <p data-i18n="about-me-p1">
             Ce parcours m'a permis d'allier créativité et logique mathématique. J'aime particulièrement m'investir dans des projets de jeux vidéo stimulants qui me poussent à sortir de ma zone de confort. Relever des défis complexes est pour moi le meilleur moyen de dépasser mes limites et de concevoir des systèmes dont je suis fière.
         </p>
-        <p>
+        <p data-i18n="about-me-p2">
             Mon objectif principal est de concevoir des expériences interactives fluides, immersives et agréables à jouer. Tout ce processus de création de la première ligne de code au résultat final me passionne et me pousse à donner le meilleur de moi-même pour offrir la meilleure expérience possible aux joueurs.
         </p>
     </div>
 </section>
 
 <section class="about-passions">
-    <h2>Mes passions</h2>
+    <h2 data-i18n="passions-title">Mes passions</h2>
     <div class="about-box">
-        <p class="lead-text">En dehors de la programmation, mon esprit reste constamment tourné vers la découverte et la création :</p>
+        <p class="lead-text" data-i18n="passions-intro">En dehors de la programmation, mon esprit reste constamment tourné vers la découverte et la création :</p>
         <ul class="passions-list">
-            <li><span class="passion-tag">Jeux vidéo</span> : Passionnée de gaming, j'explore tous les genres : du dynamisme compétitif d'<strong>Overwatch</strong> à l'ambiance plus calme de <strong>Cult of the Lamb</strong>.</li>
-            <li><span class="passion-tag">Jeux de société</span> : Joueuse régulière de <strong>Magic: The Gathering</strong>, j'apprécie la stratégie et la réflexion autour du deckbuilding.</li>
-            <li><span class="passion-tag">Lecture</span> : Grande dévoreuse de récits, qu'il s'agisse de romans, de bandes dessinées ou de mangas.</li>
-            <li><span class="passion-tag">Créativité</span> : Curieuse d'apprendre dans d'autres domaines artistiques et manuels, je m'intéresse de près à la photographie et à la pâtisserie.</li>
+            <li data-i18n="passion-games"><span class="passion-tag">Jeux vidéo</span> : Passionnée de gaming, j'explore tous les genres : du dynamisme compétitif d'<strong>Overwatch</strong> à l'ambiance plus calme de <strong>Cult of the Lamb</strong>.</li>
+            <li data-i18n="passion-boardgames"><span class="passion-tag">Jeux de société</span> : Joueuse régulière de <strong>Magic: The Gathering</strong>, j'apprécie la stratégie et la réflexion autour du deckbuilding.</li>
+            <li data-i18n="passion-reading"><span class="passion-tag">Lecture</span> : Grande dévoreuse de récits, qu'il s'agisse de romans, de bandes dessinées ou de mangas.</li>
+            <li data-i18n="passion-creative"><span class="passion-tag">Créativité</span> : Curieuse d'apprendre dans d'autres domaines artistiques et manuels, je m'intéresse de près à la photographie et à la pâtisserie.</li>
         </ul>
     </div>
 </section>
 
 <section class="about-now">
-    <h2>Actuellement et après</h2>
+    <h2 data-i18n="now-title">Actuellement et après</h2>
     <div class="about-box">
-        <p class="lead-text">
+        <p class="lead-text" data-i18n="now-lead">
             Je suis actuellement en 4ème et dernière année de spécialisation en programmation de jeux vidéo à l'école <strong class="tech-accent">Creajeux</strong> (Nîmes, France).
         </p>
-        <p>
-            Dans le cadre de cette fin de cursus, je consacre mon année à la réalisation de notre **projet de soutenance**, un jalon majeur que nous présenterons devant un jury de professionnels en fin d'année.
+        <p data-i18n="now-p1">
+            Dans le cadre de cette fin de cursus, je consacre mon année à la réalisation de notre <strong>projet de soutenance</strong>, un jalon majeur que nous présenterons devant un jury de professionnels en fin d'année.
         </p>
         <div class="search-box">
-            <span class="search-badge">Objectif</span>
-            <p>À la recherche d'un <strong>stage de 3 à 6 mois</strong> pour concrétiser ma formation et intégrer une équipe de développement.</p>
+            <span class="search-badge" data-i18n="now-badge">Objectif</span>
+            <p data-i18n="now-goal">À la recherche d'un <strong>stage de 3 à 6 mois</strong> pour concrétiser ma formation et intégrer une équipe de développement.</p>
         </div>
     </div>
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,46 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - Goret Alexandra</title>
+    <title>After Impact - Goret Alexandra</title>
     <meta name="robots" content="noindex, nofollow">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"></head>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Anti-Flash Blanc & Anti-Flash Langue -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+
+            var savedLang = localStorage.getItem('lang') || 'fr';
+            document.documentElement.lang = savedLang;
+            
+            if (savedLang === 'en') {
+                document.documentElement.classList.add('i18n-loading');
+            }
+        })();
+    </script>
+</head>
 <body>
 
 <header>
     <div class="header-container">
         <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
         </div>
         <div class="header-text">
             <h1>Goret Alexandra</h1>
-            <p class="description">Étudiante en développement de jeux vidéo</p>
+            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
         </div>
-         <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
             Télécharger mon CV
         </a>
     </div>
 </header>
 
 <nav class="navigation">
-    <a href="index.html">Accueil</a>
-    <a href="a-propos.html">À propos de moi</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav-home">Accueil</a>
+    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+    <a href="projets.html" data-i18n="nav-projects">Projets</a>
+    <a href="contact.html" data-i18n="nav-contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+        <span id="theme-icon">☀️</span>
+    </button>
+    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+        <span id="lang-text">EN</span>
+    </button>
 </nav>
 
 <section>
     <h2>After Impact</h2>
 
+    <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
+    <div class="about-box">
+        <p class="highlight-text" data-i18n="ai-intro">
+            Jeu de survie développé sur Unity.
+        </p>
+        <p data-i18n="ai-overview">
+            Dans un univers post-apocalyptique, le joueur doit gérer ses ressources et ses constantes vitales pour survivre face aux éléments et au temps qui passe.
+        </p>
 
+        <!-- CARROUSEL / GALERIE D'IMAGES DÉFILANTES -->
+        <div class="gallery-carousel">
+            <div class="carousel-track">
+                <img src="assets/images/AfterImpact/AfterImpact1.png" alt="Capture After Impact 1" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact2.png" alt="Capture After Impact 2" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact3.png" alt="Capture After Impact 3" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact4.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact5.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact6.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact7.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact8.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact9.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact10.png" alt="Capture After Impact 4" width="600" height="338">
+            </div>
+        </div>
+
+        <!-- LECTEUR VIDÉO YOUTUBE (TRAILER) -->
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube-nocookie.com/embed/KlUUCAR422A?rel=0&enablejsapi=1" 
+        title="Trailer - After Impact" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+        <!-- BOUTON D'ACTION ITCH.IO -->
+        <div class="project-links">
+            <a href="https://alex-grt.itch.io/project-after-impact" target="_blank" rel="noopener noreferrer" class="cv-button project-btn" data-i18n="ai-itch-btn">
+                🎮 Jouer / Voir sur itch.io
+            </a>
+        </div>
+    </div>
+
+    <!-- MES CONTRIBUTIONS TECHNIQUES -->
+    <h3 style="margin-top: 40px;" data-i18n="ai-contrib-title">Mes Réalisations Techniques</h3>
+    <div class="about-box">
+        <ul class="contributions-list">
+            <li>
+                <strong class="tech-accent" data-i18n="ai-feat-inventory-title">Gestionnaire d'inventaire :</strong>
+                <span data-i18n="ai-feat-inventory-desc">Conception du système de stockage d'objets, ramassage, utilisation et gestion de la grille d'inventaire.</span>
+            </li>
+            <li>
+                <strong class="tech-accent" data-i18n="ai-feat-stats-title">Système de d'états du joueur (Stats & Survival) :</strong>
+                <span data-i18n="ai-feat-stats-desc">Développement de la logique de survie gérant le froid, la faim et la santé en fonction de l'environnement.</span>
+            </li>
+            <li>
+                <strong class="tech-accent" data-i18n="ai-feat-time-title">Gestion de l'heure et du temps :</strong>
+                <span data-i18n="ai-feat-time-desc">Mise en place d'un cycle temporel régissant la progression de la journée et impactant directement le comportement du climat et des statistiques du joueur.</span>
+            </li>
+        </ul>
+    </div>
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>

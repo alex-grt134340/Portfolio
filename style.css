@@ -2,31 +2,64 @@
    VARIABLES & CONFIGURATION DU THÈME (VERSION BORDEAUX)
    ========================================================================== */
 :root {
-    --bg-main: #140709;          
-    --bg-header: #0a0203;       
-    --bg-card: rgba(39, 15, 19, 0.45);   
-    --bg-card-hover: rgba(53, 18, 22, 0.6); 
-    
-    --primary: #b22030;          
-    --primary-glow: rgba(178, 32, 48, 0.35); 
-    --secondary: #721c24;        
-    --accent: #e5b869;           
-    --accent-glow: rgba(229, 184, 105, 0.3);
-    
-    --text-main: #ffffff;
-    --text-muted: #e2d1d3;       
-    
+    /* Thème clair - par défaut */
+    --bg-main: #fcf8f8;
+    --bg-header: #f3e8e9;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
+    --bg-control: rgba(255, 255, 255, 0.75);
+    --bg-navigation: rgba(243, 232, 233, 0.85);
+    --control-border: rgba(148, 19, 34, 0.3);
+
+    --primary: #941322;
+    --primary-glow: rgba(148, 19, 34, 0.15);
+    --secondary: #c84b57;
+    --accent: #b88322;
+    --accent-glow: rgba(184, 131, 34, 0.2);
+
+    --text-main: #1c0a0c;
+    --text-muted: #574144;
+
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Poppins', sans-serif;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* Thème sombre (Bordeaux) */
+html.dark-theme,
+body.dark-theme {
+    --bg-main: #140709;
+    --bg-header: #0a0203;
+    --bg-card: rgba(39, 15, 19, 0.45);
+    --bg-card-hover: rgba(53, 18, 22, 0.6);
+    --bg-control: rgba(10, 2, 3, 0.4);
+    --bg-navigation: rgba(10, 2, 3, 0.6);
+    --control-border: rgba(178, 32, 48, 0.3);
+
+    --primary: #b22030;
+    --primary-glow: rgba(178, 32, 48, 0.35);
+    --secondary: #721c24;
+    --accent: #e5b869;
+    --accent-glow: rgba(229, 184, 105, 0.3);
+
+    --text-main: #ffffff;
+    --text-muted: #e2d1d3;
+}
+
 /* Sélection de texte et scroll fluide */
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
+    background-color: var(--bg-main);
+    overflow-y: scroll;
 }
 
-::-selection {
+/* Garde le fond de html sombre si la classe est seulement sur body */
+html:has(body.dark-theme) {
+    background-color: #140709;
+}
+
+::selection {
     background-color: var(--primary);
     color: var(--text-main);
 }
@@ -34,6 +67,12 @@ html {
 /* ==========================================================================
    STYLE GLOBAL
    ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--font-body);
     line-height: 1.6;
@@ -41,6 +80,7 @@ body {
     color: var(--text-main);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -66,7 +106,7 @@ p {
 }
 
 section {
-    max-width: 1100px; 
+    max-width: 1100px;
     margin: auto;
     padding: 60px 20px;
     position: relative;
@@ -78,15 +118,16 @@ section {
 .navigation {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
-    background: rgba(10, 2, 3, 0.6);
+    background: var(--bg-navigation);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 12px 25px;
     max-width: fit-content;
-    margin: 30px auto; 
-    border-radius: 30px; 
-    border: 1px solid rgba(178, 32, 48, 0.25);
+    margin: 30px auto;
+    border-radius: 30px;
+    border: 1px solid var(--control-border);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -103,6 +144,48 @@ section {
 .navigation a:hover {
     color: var(--accent);
     background-color: rgba(178, 32, 48, 0.15);
+}
+
+.theme-toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--control-border);
+    color: var(--text-main);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.lang-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--control-border);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-left: 5px;
+}
+
+.lang-toggle-btn:hover {
+    background-color: rgba(178, 32, 48, 0.15);
+    border-color: var(--accent);
+    transform: scale(1.08);
 }
 
 /* ==========================================================================
@@ -141,7 +224,6 @@ header {
     color: var(--text-muted);
 }
 
-/* Bouton d'action (CV) */
 .cv-button {
     background-color: var(--primary);
     color: var(--text-main);
@@ -164,7 +246,6 @@ header {
     transform: translateY(0);
 }
 
-/* Avatar animé */
 .profile-pic-wrapper {
     position: relative;
     width: 190px;
@@ -177,12 +258,8 @@ header {
 .profile-pic-wrapper::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     border-radius: 50%;
-    /* Dégradé fluide allant du bordeaux profond à l'or ambré */
     background: conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary));
     z-index: 0;
     animation: rotateGradient 4s linear infinite;
@@ -195,21 +272,21 @@ header {
     object-fit: cover;
     position: relative;
     z-index: 1;
-    border: none; 
+    border: none;
 }
 
 /* ==========================================================================
-   GLASSMORPHISM & CARTES UNIFIÉES
+   GLASSMORPHISM & CARTES
    ========================================================================== */
-.about-box, 
-.project, 
-.skill, 
-.soft-skills li, 
+.about-box,
+.project,
+.skill,
+.soft-skills li,
 .hard-skills li {
-    background: var(--bg-card); 
-    backdrop-filter: blur(12px);         
-    -webkit-backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.05); 
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 32px 0 rgba(10, 2, 3, 0.5);
     padding: 25px;
     border-radius: 12px;
@@ -218,19 +295,19 @@ header {
     transition: var(--transition);
 }
 
-.about-box:hover, 
-.project:hover, 
-.skill:hover, 
-.soft-skills li:hover, 
+.about-box:hover,
+.project:hover,
+.skill:hover,
+.soft-skills li:hover,
 .hard-skills li:hover {
     transform: translateY(-5px);
-    border-color: rgba(178, 32, 48, 0.4); 
+    border-color: rgba(178, 32, 48, 0.4);
     box-shadow: 0 10px 30px rgba(178, 32, 48, 0.25);
     background: var(--bg-card-hover);
 }
 
 /* ==========================================================================
-   SECTION À PROPOS & ECOLE
+   SECTION À PROPOS & ÉCOLE
    ========================================================================== */
 .about-section {
     max-width: 1100px;
@@ -266,7 +343,7 @@ header {
 }
 
 /* ==========================================================================
-   COMPOSANT PROJETS & SKILLS (Inchangé graphiquement, hérite des variables)
+   PROJETS & COMPÉTENCES
    ========================================================================== */
 .projects-container {
     display: grid;
@@ -300,7 +377,6 @@ header {
     transform: scale(1.2);
 }
 
-/* Badges Tooltips */
 .icon {
     position: relative;
     width: 55px;
@@ -325,8 +401,8 @@ header {
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-    border: 1px solid rgba(178, 32, 48, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--control-border);
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -339,8 +415,8 @@ header {
     transform: translateX(-50%) translateY(-4px);
 }
 
-/* Listes Soft & Hard skills */
-.soft-skills, .hard-skills {
+.soft-skills,
+.hard-skills {
     list-style: none;
     padding: 0;
     margin: 30px auto 0;
@@ -350,14 +426,18 @@ header {
     gap: 15px 40px;
 }
 
-.soft-skills li, .hard-skills li {
+.soft-skills li,
+.hard-skills li {
     display: flex;
     align-items: center;
     gap: 12px;
     text-align: left;
 }
 
-/* Contacts */
+.list-emoji {
+    font-size: 1.2em;
+}
+
 .contact-icon {
     width: 30px;
     height: 30px;
@@ -365,9 +445,8 @@ header {
     margin-right: 10px;
 }
 
-
 /* ==========================================================================
-   ANIMATIONS (Scroll & Keyframes)
+   ANIMATIONS
    ========================================================================== */
 .scroll-animate {
     opacity: 0;
@@ -389,13 +468,12 @@ section + section::before {
     position: absolute;
     top: 0;
     left: 10%;
-    width: 80%; 
+    width: 80%;
     height: 1px;
     z-index: 1;
     background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
     background-size: 200% 100%;
     animation: gradientAnimation 8s linear infinite;
-    /* Halo lumineux adapté aux tons bordeaux/or */
     box-shadow: 0 0 12px var(--primary-glow);
 }
 
@@ -416,7 +494,7 @@ section + section::before {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (Media Queries regroupées)
+   RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 800px) {
     .skills-container {
@@ -428,7 +506,7 @@ section + section::before {
     .projects-container {
         grid-template-columns: 1fr;
     }
-    
+
     .header-container {
         flex-direction: column;
         text-align: center;
@@ -437,7 +515,7 @@ section + section::before {
     .profile-pic {
         margin-bottom: 20px;
     }
-    
+
     .about-content {
         flex-direction: column;
         align-items: center;
@@ -450,20 +528,19 @@ section + section::before {
 }
 
 @media (max-width: 600px) {
-    .soft-skills, .hard-skills {
+    .soft-skills,
+    .hard-skills {
         grid-template-columns: 1fr;
     }
 }
 
 /* ==========================================================================
-   COMPOSANTS TEXTE ET CONTENU (A PROPOS & SITUATION)
+   COMPOSANTS TEXTE ET CONTENU
    ========================================================================== */
-
-/* --- Améliorations du texte "À propos" --- */
 .about-intro {
     font-size: 1.1em;
     font-weight: 500;
-    color: #fff;
+    color: var(--text-main);
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 15px;
@@ -475,14 +552,14 @@ section + section::before {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espace équilibré entre chaque ligne */
+    gap: 10px;
 }
 
 .profile-details li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: none !important; 
+    background: none !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -491,7 +568,7 @@ section + section::before {
 .profile-details .label {
     font-weight: 600;
     color: var(--accent);
-    width: 140px;          
+    width: 140px;
     flex-shrink: 0;
 }
 
@@ -499,27 +576,217 @@ section + section::before {
     color: var(--text-muted);
 }
 
-/* --- Améliorations du texte "Situation Actuelle" --- */
 .highlight-text {
     font-size: 1.15em;
-    color: #fff;
+    color: var(--text-main);
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-/* Style pour mettre en valeur les mots importants */
 .tech-accent {
-    color: var(--accent); /* Utilise la variable d'accent (Or) au lieu de l'ancien cyan */
+    color: var(--accent);
     font-weight: 600;
     text-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Espacement global des paragraphes dans les boîtes */
 .about-box p {
-    margin: 0 0 12px 0;
-    line-height: 1.7; /* Donne de l'air au texte */
+    margin: 0 0 12px;
+    line-height: 1.7;
 }
 
 .about-box p:last-child {
     margin-bottom: 0;
+}
+
+/* ==========================================================================
+   FORMULAIRE DE CONTACT & LIENS
+   ========================================================================== */
+.contact-form-container {
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-control);
+    border: 1px solid var(--control-border);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.95em;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.submit-btn {
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 1em;
+}
+
+p a,
+.social-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+p a:hover,
+.social-links a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Empêche le flash de traduction au chargement */
+html.i18n-loading body {
+    visibility: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--control-border);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   CARROUSEL D'IMAGES DES PROJETS
+   ========================================================================== */
+.gallery-carousel {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--control-border);
+    background: var(--bg-control);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+}
+
+.carousel-track img {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.carousel-track img:hover {
+    transform: scale(1.02);
+    border-color: var(--accent);
+}
+
+/* ==========================================================================
+   CARTES DE PROJETS AVEC IMAGES DE COUVERTURE
+   ========================================================================== */
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-control);
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project:hover .project-thumb img {
+    transform: scale(1.08);
+}
+
+.project-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+/* Respecte la préférence système de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
