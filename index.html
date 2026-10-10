@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Portfolio - Goret Alexandra</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
     <!-- Anti-Flash Blanc & Anti-Flash Langue -->
     <script>
-        (function() {
+        (function () {
             var savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
@@ -20,102 +23,126 @@
 
             var savedLang = localStorage.getItem('lang') || 'fr';
             document.documentElement.lang = savedLang;
-            
+
             if (savedLang === 'en') {
                 document.documentElement.classList.add('i18n-loading');
             }
         })();
     </script>
 </head>
+
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
-        </div>
-        <div class="header-text">
-            <h1>Goret Alexandra</h1>
-            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
-        </div>
-        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
-            Télécharger mon CV
-        </a>
-    </div>
-</header>
-
-<nav class="navigation">
-    <a href="index.html" data-i18n="nav-home">Accueil</a>
-    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
-    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
-    <a href="projets.html" data-i18n="nav-projects">Projets</a>
-    <a href="contact.html" data-i18n="nav-contact">Contact</a>
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
-        <span id="theme-icon">☀️</span>
-    </button>
-    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
-        <span id="lang-text">EN</span>
-    </button>
-</nav>
-
-<section>
-    <h2 data-i18n="about-heading">À propos</h2>
-    <div class="about-box">     
-        <p class="about-intro" data-i18n="about-intro">Étudiante passionnée par la création de jeux vidéo.</p>
-        
-        <ul class="profile-details">
-            <li><span class="label" data-i18n="label-location">Emplacement :</span> <span class="value" data-i18n="val-location">Nîmes, France (ouverte à une mutation)</span></li>
-            <li><span class="label" data-i18n="label-birth">Naissance :</span> <span class="value" data-i18n="val-birth">4 janvier 2005 (21 ans)</span></li>
-            <li><span class="label" data-i18n="label-role">Rôle :</span> <span class="value" data-i18n="val-role">Programmeuse Gameplay / Network</span></li>
-            <li><span class="label" data-i18n="label-specialty">Spécialité :</span> <span class="value" data-i18n="val-specialty">Unity, Network</span></li>
-        </ul>
-    </div>
-</section>
-
-<section class="about-section">
-    <h2 data-i18n="status-heading">Ma situation actuelle</h2>
-
-    <div class="about-content">
-        <div class="about-text">
-            <div class="about-box">
-                <p class="highlight-text" data-i18n="status-intro">Étudiante en programmation spécialisée dans le jeu vidéo.</p>
-                <p data-i18n="status-p1">
-                    Actuellement en 4ème et dernière année de programmation dans le jeu vidéo à l'école <strong class="tech-accent">Creajeux</strong> à Nîmes en France.
-                </p>
-                <p data-i18n="status-p2">
-                    À la recherche d'un <strong class="tech-accent">stage d'une durée de 3 à 6 mois</strong> dans le domaine de la programmation de jeu vidéo.
-                </p>
+    <header>
+        <div class="header-container">
+            <div class="profile-pic-wrapper">
+                <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
             </div>
-        </div>
-
-        <div class="school-image">
-            <a href="https://www.creajeux.fr/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/creajeux.png" alt="Creajeux" width="350" height="200">
+            <div class="header-text">
+                <h1>Goret Alexandra</h1>
+                <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+            </div>
+            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer"
+                data-i18n="cv-button">
+                Télécharger mon CV
             </a>
         </div>
-    </div>
-</section>
+    </header>
 
-<section>
-    <h2 data-i18n="contact-heading">Contact</h2>
-    <p>
-        <img src="assets/images/Gmail.png" alt="Email" class="contact-icon" width="30" height="30">
-        <span data-i18n="contact-email">Email :</span> <a href="mailto:goret.alexandra07@email.com">goret.alexandra07@email.com</a>
-    </p>
-    <p>
-        <img src="assets/images/Linkedin.png" alt="LinkedIn" class="contact-icon" width="30" height="30">  
-        LinkedIn : <a href="https://www.linkedin.com/in/alexandra-goret-6a10062b8" target="_blank" rel="noopener noreferrer" data-i18n="contact-linkedin">Mon profil LinkedIn</a>
-    </p>
-    <p>
-        <img src="assets/images/Discord.png" alt="Discord" class="contact-icon" width="30" height="30">  
-        Discord : <a href="https://discord.com/users/alex_grt" target="_blank" rel="noopener noreferrer" data-i18n="contact-discord">Mon profil Discord</a>
-    </p>
-    <p>
-        <img src="assets/images/GitHub.png" alt="GitHub" class="contact-icon" width="30" height="30">  
-        GitHub : <a href="https://github.com/alexgrt-134340" target="_blank" rel="noopener noreferrer" data-i18n="contact-github-link">Mon profil GitHub</a>
-    </p>
-</section>
+    <nav class="navigation">
+        <a href="index.html" data-i18n="nav-home">Accueil</a>
+        <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+        <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+        <a href="projets.html" data-i18n="nav-projects">Projets</a>
+        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+            <span id="theme-icon">☀️</span>
+        </button>
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+            <span id="lang-text">EN</span>
+        </button>
+    </nav>
 
-<script src="script.js"></script>
+    <section>
+        <h2 data-i18n="about-heading">À propos</h2>
+        <div class="about-box">
+            <p class="about-intro" data-i18n="about-intro">Étudiante passionnée par la création de jeux vidéo.</p>
+
+            <ul class="profile-details">
+                <li><span class="label" data-i18n="label-location">Emplacement :</span> <span class="value"
+                        data-i18n="val-location">Nîmes, France (ouverte à une mutation)</span></li>
+                <li><span class="label" data-i18n="label-birth">Naissance :</span> <span class="value"
+                        data-i18n="val-birth">4 janvier 2005 (21 ans)</span></li>
+                <li><span class="label" data-i18n="label-role">Rôle :</span> <span class="value"
+                        data-i18n="val-role">Programmeuse Gameplay / Network</span></li>
+                <li><span class="label" data-i18n="label-specialty">Spécialité :</span> <span class="value"
+                        data-i18n="val-specialty">Unity, Network</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2 data-i18n="status-heading">Ma situation actuelle</h2>
+
+        <div class="about-content">
+            <div class="about-text">
+                <div class="about-box">
+                    <p class="highlight-text" data-i18n="status-intro">Étudiante en programmation spécialisée dans le
+                        jeu vidéo.</p>
+                    <p data-i18n="status-p1">
+                        Actuellement en 4ème et dernière année de programmation dans le jeu vidéo à l'école <strong
+                            class="tech-accent">Creajeux</strong> à Nîmes en France.
+                    </p>
+                    <p data-i18n="status-p2">
+                        À la recherche d'un <strong class="tech-accent">stage d'une durée de 3 à 6 mois</strong> dans le
+                        domaine de la programmation de jeu vidéo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="school-image">
+                <a href="https://www.creajeux.fr/" target="_blank" rel="noopener noreferrer">
+                    <!-- On inverse les classes par rapport aux src -->
+                    <img src="assets/images/creajeux.png" alt="Creajeux" width="350" height="200"
+                        class="theme-logo-dark">
+                    <img src="assets/images/creajeux-black.png" alt="Creajeux" width="350" height="200"
+                        class="theme-logo-light">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 data-i18n="contact-heading">Contact</h2>
+        <p>
+            <img src="assets/images/Gmail.png" alt="Email" class="contact-icon" width="30" height="30">
+            <span data-i18n="contact-email">Email :</span> <a
+                href="mailto:goret.alexandra07@email.com">goret.alexandra07@email.com</a>
+        </p>
+        <p>
+            <img src="assets/images/Linkedin.png" alt="LinkedIn" class="contact-icon" width="30" height="30">
+            LinkedIn : <a href="https://www.linkedin.com/in/alexandra-goret-6a10062b8" target="_blank"
+                rel="noopener noreferrer" data-i18n="contact-linkedin">Mon profil LinkedIn</a>
+        </p>
+        <p>
+            <img src="assets/images/Discord.png" alt="Discord" class="contact-icon" width="30" height="30">
+            Discord : <a href="https://discord.com/users/alex_grt" target="_blank" rel="noopener noreferrer"
+                data-i18n="contact-discord">Mon profil Discord</a>
+        </p>
+        <p class="contact-line">
+            <!-- Conteneur pour les images pour éviter les sauts de ligne -->
+            <span class="contact-icon-wrapper">
+                <img src="assets/images/GitHub.png" alt="GitHub" class="contact-icon theme-logo-light" width="30"
+                    height="30">
+                <img src="assets/images/githubWhite.png" alt="GitHub" class="contact-icon theme-logo-dark" width="30"
+                    height="30">
+            </span>
+            GitHub : <a href="https://github.com/alexgrt-134340" target="_blank" rel="noopener noreferrer"
+                data-i18n="contact-github-link">Mon profil GitHub</a>
+        </p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

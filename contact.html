@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact - Goret Alexandra</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- Anti-Flash Blanc & Anti-Flash Langue -->
     <script>
-        (function() {
+        (function () {
             var savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
@@ -19,97 +22,116 @@
 
             var savedLang = localStorage.getItem('lang') || 'fr';
             document.documentElement.lang = savedLang;
-            
+
             if (savedLang === 'en') {
                 document.documentElement.classList.add('i18n-loading');
             }
         })();
     </script>
 </head>
+
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
+    <header>
+        <div class="header-container">
+            <div class="profile-pic-wrapper">
+                <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
+            </div>
+            <div class="header-text">
+                <h1>Goret Alexandra</h1>
+                <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+            </div>
+            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer"
+                data-i18n="cv-button">
+                Télécharger mon CV
+            </a>
         </div>
-        <div class="header-text">
-            <h1>Goret Alexandra</h1>
-            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+    </header>
+
+    <nav class="navigation">
+        <a href="index.html" data-i18n="nav-home">Accueil</a>
+        <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+        <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+        <a href="projets.html" data-i18n="nav-projects">Projets</a>
+        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+            <span id="theme-icon">☀️</span>
+        </button>
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+            <span id="lang-text">EN</span>
+        </button>
+    </nav>
+
+    <section>
+        <h2 data-i18n="contact-main-title">Me contacter</h2>
+        <p data-i18n="contact-subtitle">Vous pouvez m'envoyer un message directement via ce formulaire ou me retrouver
+            sur les réseaux sociaux :</p>
+
+        <!-- FORMULAIRE DE CONTACT -->
+        <div class="about-box contact-form-container">
+            <form action="https://formspree.io/f/mqpebzwe" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-i18n="form-name-label">Nom / Prénom :</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom"
+                        data-i18n-placeholder="form-name-ph">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="form-email-label">Votre Email :</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="nom@exemple.com"
+                        data-i18n-placeholder="form-email-ph">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" data-i18n="form-subject-label">Sujet :</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message"
+                        data-i18n-placeholder="form-subject-ph">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" data-i18n="form-message-label">Message :</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Écrivez votre message ici..."
+                        data-i18n-placeholder="form-message-ph"></textarea>
+                </div>
+
+                <button type="submit" class="cv-button submit-btn" data-i18n="form-submit-btn">Envoyer le
+                    message</button>
+            </form>
         </div>
-        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
-            Télécharger mon CV
-        </a>
-    </div>
-</header>
 
-<nav class="navigation">
-    <a href="index.html" data-i18n="nav-home">Accueil</a>
-    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
-    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
-    <a href="projets.html" data-i18n="nav-projects">Projets</a>
-    <a href="contact.html" data-i18n="nav-contact">Contact</a>
-    
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
-        <span id="theme-icon">☀️</span>
-    </button>
-    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
-        <span id="lang-text">EN</span>
-    </button>
-</nav>
+        <!-- LIENS ET RÉSEAUX SOCIAUX -->
+        <div class="social-links">
+            <p>
+                <img src="assets/images/Gmail.png" alt="Email" class="contact-icon" width="30" height="30">
+                <span data-i18n="contact-email-label">Email :</span> <a
+                    href="mailto:goret.alexandra07@email.com">goret.alexandra07@email.com</a>
+            </p>
+            <p>
+                <img src="assets/images/Linkedin.png" alt="LinkedIn" class="contact-icon" width="30" height="30">
+                LinkedIn : <a href="https://www.linkedin.com/in/alexandra-goret-6a10062b8" target="_blank"
+                    rel="noopener noreferrer" data-i18n="contact-linkedin-link">Mon profil LinkedIn</a>
+            </p>
+            <p>
+                <img src="assets/images/Discord.png" alt="Discord" class="contact-icon" width="30" height="30">
+                Discord : <a href="https://discord.com/users/alex_grt" target="_blank" rel="noopener noreferrer"
+                    data-i18n="contact-discord-link">Mon profil Discord</a>
+            </p>
+            <p class="contact-line">
+                <!-- Conteneur pour les images pour éviter les sauts de ligne -->
+                <span class="contact-icon-wrapper">
+                    <img src="assets/images/GitHub.png" alt="GitHub" class="contact-icon theme-logo-light"
+                        width="30" height="30">
+                    <img src="assets/images/githubWhite.png" alt="GitHub" class="contact-icon theme-logo-dark" width="30"
+                        height="30">
+                </span>
+                GitHub : <a href="https://github.com/alexgrt-134340" target="_blank" rel="noopener noreferrer"
+                    data-i18n="contact-github-link">Mon profil GitHub</a>
+            </p>
+        </div>
+    </section>
 
-<section>
-    <h2 data-i18n="contact-main-title">Me contacter</h2>
-    <p data-i18n="contact-subtitle">Vous pouvez m'envoyer un message directement via ce formulaire ou me retrouver sur les réseaux sociaux :</p>
-
-    <!-- FORMULAIRE DE CONTACT -->
-    <div class="about-box contact-form-container">
-        <form action="https://formspree.io/f/mqpebzwe" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name" data-i18n="form-name-label">Nom / Prénom :</label>
-                <input type="text" id="name" name="name" required placeholder="Votre nom" data-i18n-placeholder="form-name-ph">
-            </div>
-
-            <div class="form-group">
-                <label for="email" data-i18n="form-email-label">Votre Email :</label>
-                <input type="email" id="email" name="_replyto" required placeholder="nom@exemple.com" data-i18n-placeholder="form-email-ph">
-            </div>
-
-            <div class="form-group">
-                <label for="subject" data-i18n="form-subject-label">Sujet :</label>
-                <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message" data-i18n-placeholder="form-subject-ph">
-            </div>
-
-            <div class="form-group">
-                <label for="message" data-i18n="form-message-label">Message :</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Écrivez votre message ici..." data-i18n-placeholder="form-message-ph"></textarea>
-            </div>
-
-            <button type="submit" class="cv-button submit-btn" data-i18n="form-submit-btn">Envoyer le message</button>
-        </form>
-    </div>
-
-    <!-- LIENS ET RÉSEAUX SOCIAUX -->
-    <div class="social-links">
-        <p>
-            <img src="assets/images/Gmail.png" alt="Email" class="contact-icon" width="30" height="30">
-            <span data-i18n="contact-email-label">Email :</span> <a href="mailto:goret.alexandra07@email.com">goret.alexandra07@email.com</a>
-        </p>
-        <p>
-            <img src="assets/images/Linkedin.png" alt="LinkedIn" class="contact-icon" width="30" height="30">  
-            LinkedIn : <a href="https://www.linkedin.com/in/alexandra-goret-6a10062b8" target="_blank" rel="noopener noreferrer" data-i18n="contact-linkedin-link">Mon profil LinkedIn</a>
-        </p>
-        <p>
-            <img src="assets/images/Discord.png" alt="Discord" class="contact-icon" width="30" height="30">  
-            Discord : <a href="https://discord.com/users/alex_grt" target="_blank" rel="noopener noreferrer" data-i18n="contact-discord-link">Mon profil Discord</a>
-        </p>
-        <p>
-            <img src="assets/images/GitHub.png" alt="GitHub" class="contact-icon" width="30" height="30">  
-            GitHub : <a href="https://github.com/alexgrt-134340" target="_blank" rel="noopener noreferrer" data-i18n="contact-github-link">Mon profil GitHub</a>
-        </p>
-    </div>
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

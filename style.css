@@ -380,11 +380,21 @@ header {
 .icon {
     position: relative;
     width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
 }
 
 .icon img {
-    width: 100%;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
     transition: var(--transition);
 }
 
@@ -443,6 +453,13 @@ header {
     height: 30px;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+.contact-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-right: 8px; /* Petit espace avant le texte */
 }
 
 /* ==========================================================================
@@ -789,4 +806,28 @@ html.i18n-loading body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+.theme-logo-dark {
+    display: none;
+}
+
+.theme-logo-light {
+    display: block;
+}
+
+/* Thème sombre : afficher le logo blanc à la place */
+html.dark-theme .theme-logo-light,
+body.dark-theme .theme-logo-light {
+    display: none;
+}
+
+html.dark-theme .theme-logo-dark,
+body.dark-theme .theme-logo-dark {
+    display: block;
+}
+
+.icon img.icon-large {
+    width: 90px;
+    height: 90px;
 }
