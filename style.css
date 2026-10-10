@@ -827,7 +827,8 @@ body.dark-theme .theme-logo-dark {
     display: block;
 }
 
-.icon img.icon-large {
+.icon img.icon-large 
+{
     width: 90px;
     height: 90px;
 }
