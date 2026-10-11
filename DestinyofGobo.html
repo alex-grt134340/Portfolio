@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>After Impact - Goret Alexandra</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Anti-Flash Blanc & Anti-Flash Langue -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+
+            var savedLang = localStorage.getItem('lang') || 'fr';
+            document.documentElement.lang = savedLang;
+            
+            if (savedLang === 'en') {
+                document.documentElement.classList.add('i18n-loading');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="profile-pic-wrapper">
+            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
+        </div>
+        <div class="header-text">
+            <h1>Goret Alexandra</h1>
+            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+        </div>
+        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
+            Télécharger mon CV
+        </a>
+    </div>
+</header>
+
+<nav class="navigation">
+    <a href="index.html" data-i18n="nav-home">Accueil</a>
+    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+    <a href="projets.html" data-i18n="nav-projects">Projets</a>
+    <a href="contact.html" data-i18n="nav-contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+        <span id="theme-icon">☀️</span>
+    </button>
+    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+        <span id="lang-text">EN</span>
+    </button>
+</nav>
+
+<section>
+    <h2>Destiny of Gobo</h2>
+
+    <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
+    <div class="about-box">
+        <p class="highlight-text" data-i18n="ai-intro">
+            Jeu d'exploration et de combat sur CSFML.
+        </p>
+        <p data-i18n="ai-overview">blablabla </p>
+
+        <!-- CARROUSEL / GALERIE D'IMAGES DÉFILANTES -->
+        <div class="gallery-carousel">
+            <div class="carousel-track">
+                <img src="assets/images/AfterImpact/AfterImpact1.png" alt="Capture After Impact 1" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact2.png" alt="Capture After Impact 2" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact3.png" alt="Capture After Impact 3" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact4.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact5.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact6.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact7.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact8.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact9.png" alt="Capture After Impact 4" width="600" height="338">
+                <img src="assets/images/AfterImpact/AfterImpact10.png" alt="Capture After Impact 4" width="600" height="338">
+            </div>
+        </div>
+
+        <!-- LECTEUR VIDÉO YOUTUBE (TRAILER) -->
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/EWbevpEzaJ4" 
+        title="Trailer - Destiny of Gobo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+        <!-- BOUTON D'ACTION ITCH.IO -->
+        <div class="project-links">
+            <a href="https://alex-grt.itch.io/destiny-of-gobo" target="_blank" rel="noopener noreferrer" class="cv-button project-btn" data-i18n="ai-itch-btn">
+                🎮 Jouer / Voir sur itch.io
+            </a>
+        </div>
+    </div>
+
+    <!-- MES CONTRIBUTIONS TECHNIQUES -->
+    <h3 style="margin-top: 40px;" data-i18n="ai-contrib-title">Mes Réalisations Techniques</h3>
+    <div class="about-box">
+        <ul class="contributions-list">
+            <li>
+                <strong class="tech-accent" data-i18n="ai-feat-inventory-title">Gestionnaire d'inventaire :</strong>
+                <span data-i18n="ai-feat-inventory-desc">Conception du système de stockage d'objets, ramassage, utilisation et gestion de la grille d'inventaire.</span>
+            </li>
+            <li>
+                <strong class="tech-accent" data-i18n="ai-feat-stats-title">Aide sur le level design </strong>
+                <span data-i18n="ai-feat-stats-desc">Mettre en place la trame de l'histoire</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
