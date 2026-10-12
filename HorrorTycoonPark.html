@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <title>Horror Tycoon Park - Goret Alexandra</title>
     <meta name="robots" content="noindex, nofollow">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- Anti-Flash Blanc & Anti-Flash Langue -->
     <script>
-        (function() {
+        (function () {
             var savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
@@ -21,52 +23,107 @@
 
             var savedLang = localStorage.getItem('lang') || 'fr';
             document.documentElement.lang = savedLang;
-            
+
             if (savedLang === 'en') {
                 document.documentElement.classList.add('i18n-loading');
             }
         })();
     </script>
 </head>
+
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
+    <header>
+        <div class="header-container">
+            <div class="profile-pic-wrapper">
+                <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
+            </div>
+            <div class="header-text">
+                <h1>Goret Alexandra</h1>
+                <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+            </div>
+            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer"
+                data-i18n="cv-button">
+                Télécharger mon CV
+            </a>
         </div>
-        <div class="header-text">
-            <h1>Goret Alexandra</h1>
-            <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
+    </header>
+
+    <nav class="navigation">
+        <a href="index.html" data-i18n="nav-home">Accueil</a>
+        <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+        <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+        <a href="projets.html" data-i18n="nav-projects">Projets</a>
+        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+            <span id="theme-icon">☀️</span>
+        </button>
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+            <span id="lang-text">EN</span>
+        </button>
+    </nav>
+
+    <section>
+        <h2>Horror Tycoon Park</h2>
+        <div class="about-box">
+            <p data-i18n="project-horrortycoon-desc">Projet de jeu vidéo réalisé avec Unity.</p>
+            <!-- Ajoute ici la présentation détaillée, captures d'écran, vidéos ou liens de ton projet -->
         </div>
-        <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer" data-i18n="cv-button">
-            Télécharger mon CV
-        </a>
-    </div>
-</header>
 
-<nav class="navigation">
-    <a href="index.html" data-i18n="nav-home">Accueil</a>
-    <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
-    <a href="competences.html" data-i18n="nav-skills">Compétences</a>
-    <a href="projets.html" data-i18n="nav-projects">Projets</a>
-    <a href="contact.html" data-i18n="nav-contact">Contact</a>
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
-        <span id="theme-icon">☀️</span>
-    </button>
-    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
-        <span id="lang-text">EN</span>
-    </button>
-</nav>
+        <!-- MES CONTRIBUTIONS TECHNIQUES -->
+        <h3 style="margin-top: 40px;" data-i18n="ai-contrib-title">Mes Réalisations Techniques</h3>
+        <div class="contributions">
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-inventory-title">Conception du shop</h4>
+                    <p data-i18n="ai-feat-inventory-desc">Création et gestion de comment fonctionne le shop.</p>
+                    <ul>
+                        <li data-i18n="ai-feat-inventory-p1"></li>
+                        <li data-i18n="ai-feat-inventory-p2"></li>
+                        <li data-i18n="ai-feat-inventory-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="images/inventory.png" alt="Capture de l'inventaire en jeu" loading="lazy">
+                    <figcaption data-i18n="ai-feat-inventory-caption">le shop</figcaption>
+                </figure>
+            </article>
 
-<section>
-    <h2>Horror Tycoon Park</h2>
-    <div class="about-box">
-        <p data-i18n="project-horrortycoon-desc">Projet de jeu vidéo réalisé avec Unity.</p>
-        <!-- Ajoute ici la présentation détaillée, captures d'écran, vidéos ou liens de ton projet -->
-    </div>
-</section>
+            <article class="contribution reverse">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-stats-title">Ajout du UI</h4>
+                    <p data-i18n="ai-feat-stats-desc">Ajout du Ui afin de donner les indications au joueur.</p>
+                    <ul>
+                        <li data-i18n="ai-feat-stats-p1"></li>
+                        <li data-i18n="ai-feat-stats-p2"></li>
+                        <li data-i18n="ai-feat-stats-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="images/stats.png" alt="Capture des jauges de survie" loading="lazy">
+                    <figcaption data-i18n="ai-feat-stats-caption">UI</figcaption>
+                </figure>
+            </article>
 
-<script src="script.js"></script>
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-time-title">Gestion des statisques du parc</h4>
+                    <p data-i18n="ai-feat-time-desc">Création et gestion des différentes statistiques du parc (argent et réputation).</p>
+                    <ul>
+                        <li data-i18n="ai-feat-time-p1"></li>
+                        <li data-i18n="ai-feat-time-p2"></li>
+                        <li data-i18n="ai-feat-time-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="images/time.png" alt="Capture du cycle jour/nuit" loading="lazy">
+                    <figcaption data-i18n="ai-feat-time-caption">le UI</figcaption>
+                </figure>
+            </article>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

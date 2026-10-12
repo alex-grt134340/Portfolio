@@ -84,16 +84,20 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-heading);
     letter-spacing: 0.5px;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-shadow: 0 0 15px var(--primary-glow);
 }
 
-h2, h3 {
+h2,
+h3 {
     color: var(--primary);
 }
 
@@ -459,7 +463,8 @@ header {
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-    margin-right: 8px; /* Petit espace avant le texte */
+    margin-right: 8px;
+    /* Petit espace avant le texte */
 }
 
 /* ==========================================================================
@@ -480,7 +485,7 @@ header {
     animation: fadeUp 0.8s ease both;
 }
 
-section + section::before {
+section+section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -495,19 +500,39 @@ section + section::before {
 }
 
 @keyframes rotateGradient {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==========================================================================
@@ -545,6 +570,7 @@ section + section::before {
 }
 
 @media (max-width: 600px) {
+
     .soft-skills,
     .hard-skills {
         grid-template-columns: 1fr;
@@ -798,6 +824,7 @@ html.i18n-loading body {
 
 /* Respecte la préférence système de réduction des animations */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -827,8 +854,64 @@ body.dark-theme .theme-logo-dark {
     display: block;
 }
 
-.icon img.icon-large 
-{
+.icon img.icon-large {
     width: 90px;
     height: 90px;
+}
+
+.contributions {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Texte à gauche, image à droite */
+.contribution {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+/* Variante : image à gauche (on remonte la figure avant le texte) */
+.contribution.reverse .contribution-media {
+    order: -1;
+}
+
+.contribution-text h4 {
+    margin: 0 0 0.5rem;
+}
+
+.contribution-text ul {
+    padding-left: 1.2rem;
+    margin: 0.75rem 0 0;
+}
+
+.contribution-media {
+    margin: 0;
+}
+
+.contribution-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contribution-media figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    text-align: center;
+}
+
+/* Mobile : une seule colonne, texte puis image */
+@media (max-width: 768px) {
+    .contribution {
+        grid-template-columns: 1fr;
+    }
+
+    .contribution.reverse .contribution-media {
+        order: 0;
+    }
 }

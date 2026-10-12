@@ -121,25 +121,69 @@
 
         <!-- MES CONTRIBUTIONS TECHNIQUES -->
         <h3 style="margin-top: 40px;" data-i18n="ai-contrib-title">Mes Réalisations Techniques</h3>
-        <div class="about-box">
-            <ul class="contributions-list">
-                <li>
-                    <strong class="tech-accent" data-i18n="ai-feat-inventory-title">Gestionnaire d'inventaire :</strong>
-                    <span data-i18n="ai-feat-inventory-desc">Conception du système de stockage d'objets, ramassage,
-                        utilisation et gestion de la grille d'inventaire.</span>
-                </li>
-                <li>
-                    <strong class="tech-accent" data-i18n="ai-feat-stats-title">Système de d'états du joueur (Stats &
-                        Survival) :</strong>
-                    <span data-i18n="ai-feat-stats-desc">Développement de la logique de survie gérant le froid, la faim
-                        et la santé en fonction de l'environnement.</span>
-                </li>
-                <li>
-                    <strong class="tech-accent" data-i18n="ai-feat-time-title">Gestion de l'heure et du temps :</strong>
-                    <span data-i18n="ai-feat-time-desc">Mise en place d'un cycle temporel régissant la progression de la
-                        journée et impactant directement le comportement du climat et des statistiques du joueur.</span>
-                </li>
-            </ul>
+
+        <div class="contributions">
+
+            <!-- ── 1. Inventaire : image à droite ── -->
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-inventory-title">Gestionnaire d'inventaire</h4>
+                    <p data-i18n="ai-feat-inventory-desc">Conception du système de stockage d'objets, ramassage,
+                        utilisation et gestion de la grille d'inventaire.</p>
+                    <ul>
+                        <li data-i18n="ai-feat-inventory-p1">Grille d'emplacements avec empilement des objets identiques
+                        </li>
+                        <li data-i18n="ai-feat-inventory-p2">Ramassage depuis le monde et ajout automatique à
+                            l'inventaire</li>
+                        <li data-i18n="ai-feat-inventory-p3">Utilisation d'un objet (consommer, équiper, jeter) depuis
+                            la grille</li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/inventory.png" alt="Capture de l'inventaire en jeu" loading="lazy">
+                    <figcaption data-i18n="ai-feat-inventory-caption">La grille d'inventaire en jeu</figcaption>
+                </figure>
+            </article>
+
+            <!-- ── 2. Stats & survie : image à gauche ── -->
+            <article class="contribution reverse">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-stats-title">Système d'états du joueur (Stats
+                        Survival)</h4>
+                    <p data-i18n="ai-feat-stats-desc">Développement de la logique de survie gérant le froid, la faim
+                        et la santé en fonction de l'environnement.</p>
+                    <ul>
+                        <li data-i18n="ai-feat-stats-p1">Jauges de faim, de froid et de santé qui évoluent avec le temps
+                        </li>
+                        <li data-i18n="ai-feat-stats-p2">Le froid dépend de l'environnement (météo, heure, abri)</li>
+                        <li data-i18n="ai-feat-stats-p3">La santé baisse quand une jauge est vide, et remonte sinon</li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/stats.png" alt="Capture des jauges de survie" loading="lazy">
+                    <figcaption data-i18n="ai-feat-stats-caption">Les jauges de survie du joueur</figcaption>
+                </figure>
+            </article>
+
+            <!-- ── 3. Heure et temps : image à droite ── -->
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="ai-feat-time-title">Gestion de l'heure et du temps</h4>
+                    <p data-i18n="ai-feat-time-desc">Mise en place d'un cycle temporel régissant la progression de la
+                        journée et impactant directement le comportement du climat et des statistiques du joueur.</p>
+                    <ul>
+                        <li data-i18n="ai-feat-time-p1">Horloge de jeu avec cycle jour / nuit</li>
+                        <li data-i18n="ai-feat-time-p2">Le climat change selon l'heure de la journée</li>
+                        <li data-i18n="ai-feat-time-p3">L'heure et le climat influencent directement les stats du joueur
+                        </li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/time.png" alt="Capture du cycle jour/nuit" loading="lazy">
+                    <figcaption data-i18n="ai-feat-time-caption">Le cycle jour / nuit</figcaption>
+                </figure>
+            </article>
+
         </div>
     </section>
 
