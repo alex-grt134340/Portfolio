@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,40 +5,131 @@
     <meta charset="UTF-8">
     <title>Portfolio - Goret Alexandra</title>
     <meta name="robots" content="noindex, nofollow">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"></head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            // 1. Gestion du thème
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+
+            // 2. Préparation de la langue pour éviter le FOUC
+            var savedLang = localStorage.getItem('lang') || 'fr';
+            document.documentElement.lang = savedLang;
+
+            // Cache le corps de la page 1 milliseconde le temps d'appliquer les textes
+            if (savedLang === 'en') {
+                document.documentElement.classList.add('i18n-loading');
+            }
+        })();
+    </script>
+</head>
+
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="profile-pic-wrapper">
-            <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+    <header>
+        <div class="header-container">
+            <div class="profile-pic-wrapper">
+                <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+            </div>
+            <div class="header-text">
+                <h1>Goret Alexandra</h1>
+                <p class="description">Étudiante en développement de jeux vidéo</p>
+            </div>
+            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+                Télécharger mon CV
+            </a>
         </div>
-        <div class="header-text">
-            <h1>Goret Alexandra</h1>
-            <p class="description">Étudiante en développement de jeux vidéo</p>
+    </header>
+
+    <nav class="navigation">
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos de moi</a>
+        <a href="competences.html">Compétences</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+            <span id="theme-icon">☀️</span>
+        </button>
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Changer de langue">
+            <span id="lang-text">EN</span>
+        </button>
+    </nav>
+
+    <section>
+        <h2>Athaza</h2>
+
+        <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
+        <div class="about-box">
+            <p class="highlight-text" data-i18n="ai-intro">
+                Jeu d'extraction survie dévellopé avec SFML.
+            </p>
+            <p data-i18n="ai-overview">
+                Athaza est un jeu de survie et d’exploration dans un monde post-apocalyptique. Gardez vos alliés
+                proches, car les humains ne sont pas les seules créatures de ce monde.
+            </p>
+
+            <!-- CARROUSEL / GALERIE D'IMAGES DÉFILANTES -->
+            <div class="gallery-carousel">
+                <div class="carousel-track">
+                    <img src="assets/images/Athaza/1.png" alt="Capture After Impact 1" width="600" height="338">
+                    <img src="assets/images/Athaza/2.png" alt="Capture After Impact 2" width="600" height="338">
+                    <img src="assets/images/Athaza/3.png" alt="Capture After Impact 3" width="600" height="338">
+                    <img src="assets/images/Athaza/4.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/5.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/6.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/7.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/8.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/9.png" alt="Capture After Impact 4" width="600" height="338">
+                    <img src="assets/images/Athaza/10.png" alt="Capture After Impact 4" width="600" height="338">
+                </div>
+            </div>
+
+            <!-- LECTEUR VIDÉO YOUTUBE (TRAILER) -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/uktZdi4i32Y" title="Trailer -  Athaza" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+            <!-- BOUTON D'ACTION ITCH.IO -->
+            <div class="project-links">
+                <a href="https://alex-grt.itch.io/project-athaza" target="_blank" rel="noopener noreferrer"
+                    class="cv-button project-btn" data-i18n="ai-itch-btn">
+                    🎮 Jouer / Voir sur itch.io
+                </a>
+            </div>
         </div>
-         <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
-            Télécharger mon CV
-        </a>
-    </div>
-</header>
 
-<nav class="navigation">
-    <a href="index.html">Accueil</a>
-    <a href="a-propos.html">À propos de moi</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-    <a href="contact.html">Contact</a>
-</nav>
+        <!-- MES CONTRIBUTIONS TECHNIQUES -->
+        <h3 style="margin-top: 40px;" data-i18n="ai-contrib-title">Mes Réalisations Techniques</h3>
+        <div class="about-box">
+            <ul class="contributions-list">
+                <li>
+                    <strong class="tech-accent" data-i18n="ai-feat-inventory-title">Création et gestion de comment fonctionne la base dans le jeu : </strong>
+                    <span data-i18n="ai-feat-inventory-desc">blablabla</span>
+                </li>
+                <li>
+                    <strong class="tech-accent" data-i18n="ai-feat-stats-title">Développement de la logique de fonctionnement des différents NPCs :</strong>
+                    <span data-i18n="ai-feat-stats-desc">blablabla </span>
+                </li>
+                <li>
+                    <strong class="tech-accent" data-i18n="ai-feat-time-title">Création et gestion des différents textes dans le jeu :</strong>
+                    <span data-i18n="ai-feat-time-desc">blablabla.</span>
+                </li>
+            </ul>
+        </div>
 
-<section>
-    <h2>Athaza</h2>
+    </section>
 
-</section>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
