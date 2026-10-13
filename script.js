@@ -120,22 +120,87 @@ const translations = {
         "ai-feat-inventory-desc": "Conception du système de stockage d'objets, ramassage, utilisation et gestion de la grille d'inventaire.",
         "ai-feat-inventory-p1" : "Grille d'emplacements avec empilement des objets identiques",
         "ai-feat-inventory-p2" : "Ramassage depuis le monde et ajout automatique à l'inventaire",
+        "ai-feat-inventory-p3" : "Utilisation d'un objet (consommer, équiper, jeter) depuis la grille",
+        "ai-feat-inventory-caption" : "La grille d'inventaire en jeu",
         "ai-feat-stats-title": "Système d'états du joueur (Stats & Survival) :",
         "ai-feat-stats-desc": "Développement de la logique de survie gérant le froid, la faim et la santé en fonction de l'environnement.",
+        "ai-feat-stats-p1" :"Jauges de faim, de froid et de santé qui évoluent avec le temps",
+        "ai-feat-stats-p2" :"Le froid dépend de l'environnement (météo, heure, abri)",
+        "ai-feat-stats-p3" :"La santé baisse quand une jauge est vide, et remonte sinon",
+        "ai-feat-stats-caption" :"Les jauges de survie du joueur",
         "ai-feat-time-title": "Gestion de l'heure et du temps :",
         "ai-feat-time-desc": "Mise en place d'un cycle temporel régissant la progression de la journée et impactant directement le comportement du climat et des statistiques du joueur.",
-
+        "ai-feat-time-p1" : "Horloge de jeu avec cycle jour / nuit",
+        "ai-feat-time-p2" : "Le climat change selon l'heure de la journée";
+        "ai-feat-time-p3" : "L'heure et le climat influencent directement les stats du joueur",
+        "ai-feat-time-caption" : "Le cycle jour / nuit",
+        
         //athaza
+        "at-intro" : "Jeu d'extraction survie dévellopé avec SFML.",
+        "at-overview" : "Athaza est un jeu de survie et d’exploration dans un monde post-apocalyptique. Gardez vos alliés proches, car les humains ne sont pas les seules créatures de ce monde.",
+        "at-itch-btn" : "Jouer / Voir sur itch.io",
+        "at-contrib-title" : "Mes Réalisations Techniques",
+        "at-feat-QG-title" : "Conception du QG",
+        "at-feat-QG-desc" : "Création et gestion de comment fonctionne la base dans le jeu.",
+        "ai-feat-QG-p1" : "J'ai mis en place le système de base au niveau du code afin de simplifier l'implémentation des différents modules dans la base afin que tout fonctionne correctement",
+        "ai-feat-QG-p2" : "J'ai notamment mis en place le système de jardinnage afin de pouvoir nous produire de la nourriture qui pourra permettre au joueur de manger pour éventuellement se soigner",
+        "ai-feat-QG-p3" : "Et jai mis en places le systèmes d'aparations des npcs dans la base au fur et à mesure du jeu",
+        "at-feat-QG-caption" : "la base",
+        "at-feat-npc-title" :"Conception du fonctionnement des NPCs",
+        "at-feat-npc-desc" : "Développement de la logique de fonctionnement des différents NPCs.",
+        "at-feat-npc-p1" :"",
+        "at-feat-npc-p2" : "",
+        "at-feat-npc-p3" : "",
+        "at-feat-npc-caption" : "les npcs",
+        "at-feat-txt-title" : "Gestion des textes / dialogues",
+        "at-feat-txt-desc" : "Création et gestion des différents textes dans le jeu.",
+        "at-feat-txt-p1" : "",
+        "at-feat-txt-p2" : "",
+        "at-feat-txt-p3" : "",
+        "at-feat-txt-caption" : "les textes",
 
         //horrortycoon
+        "horrortycoon-intro" : "Jeu style tycoon dévellopé avec Unity pour téléphone.",
+        "horrortycoon-overview" : "",
+        "horrortycoon-itch-btn" : "Jouer / Voir sur itch.io",
+        "horrortycoon-contrib-title" : "Mes Réalisations Techniques",
+        "horrortycoon-feat-shop-title" : "Conception du shop",
+        "horrortycoon-feat-shop-desc" : "Création et gestion de comment fonctionne le shop.",
+        "horrortycoon-feat-shop-p1" : "",
+        "horrortycoon-feat-shop-p2" : "",
+        "horrortycoon-feat-shop-p3" : "",
+        "horrortycoon-feat-shop-caption" : "le shop",
+        "horrortycoon-feat-UI-title" : "Ajout du UI et des statistiques",
+        "horrortycoon-feat-UI-desc" : "Ajout du Ui afin de donner les indications au joueur ainsi que les données du joueur.",
+        "horrortycoon-feat-UI-p1" : "",
+        "horrortycoon-feat-UI-p2" : "",
+        "horrortycoon-feat-UI-p3" : "",
+        "horrortycoon-feat-UI-caption" : "UI",
 
         //destinyofgobo
+        "dg-intro" : "Jeu d'exploration et de combat sur CSFML.",
+        "dg-overview" : "",
+        "dg-itch-btn" : "Jouer / Voir sur itch.io",
+        "dg-contrib-title" : "Mes Réalisations Techniques",
+        "dg-feat-inventory-title" : "Conception de l'inventaire",
+        "dg-feat-inventory-desc" : "Création et gestion de l'inventaire.",
+        "dg-feat-inventory-p1" : "",
+        "dg-feat-inventory-p2" : "",
+        "dg-feat-inventory-p3" : "",
+        "dg-feat-inventory-caption" : "l'inventaire",
+        "dg-feat-menu-title" : "Ajout du menu et des options",
+        "dg-feat-menu-desc" : "Mise en place des différentes options et du menu.",
+        "dg-feat-menu-p1" : "",
+        "dg-feat-menu-p2" : "",
+        "dg-feat-menu-p3" : "",
+        "dg-feat-menu-caption" : "Menu/Options",
 
         //projet de soutenance
+        "pp-intro" : "",
+        "pp-overview" : "",
+        "pp-contrib-title" : "Mes Réalisations",
 
         //portfolio
-        
-
 
     },
     en: {
@@ -231,27 +296,96 @@ const translations = {
         "contact-discord-link": "My Discord profile",
         "contact-github-link": "My GitHub profile",
 
-        //projet after impact
+        // project after impact
         "ai-intro": "Survival game developed with Unity.",
         "ai-overview": "In a post-apocalyptic world, players must manage their resources and vital stats to survive against the elements and passing time.",
-        "ai-itch-btn": "🎮 Play / View on itch.io",
+        "ai-itch-btn": "Play / View on itch.io",
         "ai-contrib-title": "My Technical Contributions",
-        "ai-feat-inventory-title": "Inventory System:",
+        "ai-feat-inventory-title": "Inventory System",
         "ai-feat-inventory-desc": "Designed item storage, pickup mechanics, usage, and inventory grid management.",
-        "ai-feat-stats-title": "Player Status System (Stats & Survival):",
+        "ai-feat-inventory-p1": "Slot grid system with stacking for identical items",
+        "ai-feat-inventory-p2": "In-world item pickup and automatic addition to inventory",
+        "ai-feat-inventory-p3": "Item usage (consume, equip, drop) directly from the grid",
+        "ai-feat-inventory-caption": "In-game inventory grid",
+        "ai-feat-stats-title": "Player Status System (Stats & Survival)",
         "ai-feat-stats-desc": "Developed survival logic handling cold, hunger, and health based on environmental conditions.",
-        "ai-feat-time-title": "Time & Clock Management:",
+        "ai-feat-stats-p1": "Hunger, cold, and health gauges evolving over time",
+        "ai-feat-stats-p2": "Cold exposure depends on environment (weather, time of day, shelter)",
+        "ai-feat-stats-p3": "Health drops when a gauge depletes, and regenerates otherwise",
+        "ai-feat-stats-caption": "Player survival gauges",
+        "ai-feat-time-title": "Time & Clock Management",
         "ai-feat-time-desc": "Implemented a day/night cycle system directly impacting climate behaviors and player statistics.",
+        "ai-feat-time-p1": "In-game clock with day/night cycle",
+        "ai-feat-time-p2": "Weather changes depending on the time of day",
+        "ai-feat-time-p3": "Time and weather directly influence player stats",
+        "ai-feat-time-caption": "Day / Night cycle",
 
-        //athaza
+        // athaza
+        "at-intro": "Survival extraction game developed with SFML.",
+        "at-overview": "Athaza is a survival and exploration game set in a post-apocalyptic world. Keep your allies close, because humans are not the only creatures roaming this world.",
+        "at-itch-btn": "Play / View on itch.io",
+        "at-contrib-title": "My Technical Contributions",
+        "at-feat-QG-title": "HQ Design & Architecture",
+        "at-feat-QG-desc": "Creation and management of base mechanics in-game.",
+        "at-feat-QG-p1": "Set up the base system at code level to streamline the implementation of various modules in HQ and ensure smooth operation",
+        "at-feat-QG-p2": "Implemented the gardening system to allow food production for player consumption and healing",
+        "at-feat-QG-p3": "Implemented NPC spawning mechanics in HQ progressing alongside the game",
+        "at-feat-QG-caption": "The HQ Base",
+        "at-feat-npc-title": "NPC Behavior & Logic",
+        "at-feat-npc-desc": "Development of behavioral logic for the various NPCs.",
+        "at-feat-npc-p1": "",
+        "at-feat-npc-p2": "",
+        "at-feat-npc-p3": "",
+        "at-feat-npc-caption": "The NPCs",
+        "at-feat-txt-title": "Text & Dialogue Management",
+        "at-feat-txt-desc": "Creation and management of in-game text systems.",
+        "at-feat-txt-p1": "",
+        "at-feat-txt-p2": "",
+        "at-feat-txt-p3": "",
+        "at-feat-txt-caption": "Text systems",
 
-        //horrortycoon
+        // horrortycoon
+        "horrortycoon-intro": "Tycoon-style game developed with Unity for mobile devices.",
+        "horrortycoon-overview": "",
+        "horrortycoon-itch-btn": "Play / View on itch.io",
+        "horrortycoon-contrib-title": "My Technical Contributions",
+        "horrortycoon-feat-shop-title": "Shop System Design",
+        "horrortycoon-feat-shop-desc": "Creation and management of shop mechanics.",
+        "horrortycoon-feat-shop-p1": "",
+        "horrortycoon-feat-shop-p2": "",
+        "horrortycoon-feat-shop-p3": "",
+        "horrortycoon-feat-shop-caption": "The shop",
+        "horrortycoon-feat-UI-title": "UI & Stats Integration",
+        "horrortycoon-feat-UI-desc": "Added UI elements to display player indicators and statistics.",
+        "horrortycoon-feat-UI-p1": "",
+        "horrortycoon-feat-UI-p2": "",
+        "horrortycoon-feat-UI-p3": "",
+        "horrortycoon-feat-UI-caption": "User Interface",
 
-        //destinyofgobo
+        // destinyofgobo
+        "dg-intro": "Exploration and combat game built on CSFML.",
+        "dg-overview": "",
+        "dg-itch-btn": "Play / View on itch.io",
+        "dg-contrib-title": "My Technical Contributions",
+        "dg-feat-inventory-title": "Inventory System Design",
+        "dg-feat-inventory-desc": "Creation and management of the inventory system.",
+        "dg-feat-inventory-p1": "",
+        "dg-feat-inventory-p2": "",
+        "dg-feat-inventory-p3": "",
+        "dg-feat-inventory-caption": "The inventory",
+        "dg-feat-menu-title": "Menu & Options Integration",
+        "dg-feat-menu-desc": "Implementation of game options and main menu.",
+        "dg-feat-menu-p1": "",
+        "dg-feat-menu-p2": "",
+        "dg-feat-menu-p3": "",
+        "dg-feat-menu-caption": "Menu / Options",
 
-        //projet de soutenance
+        // graduation project
+        "pp-intro": "",
+        "pp-overview": "",
+        "pp-contrib-title": "My Achievements"
 
-        //portfolio
+        // portfolio
     }
 };
 
