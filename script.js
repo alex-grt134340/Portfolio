@@ -403,7 +403,6 @@ document.addEventListener("DOMContentLoaded", () => {
         themeIcon.textContent = isDark ? '☀️' : '🌙';
 
         themeToggleBtn.addEventListener('click', () => {
-            // Applique le thème sur html ET body pour éliminer les incohérences
             const nowDark = document.body.classList.toggle('dark-theme');
             document.documentElement.classList.toggle('dark-theme', nowDark);
 
@@ -439,7 +438,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.lang = lang;
         localStorage.setItem('lang', lang);
 
-        // Réaffiche la page une fois la traduction appliquée sans flash
         document.documentElement.classList.remove('i18n-loading');
     }
 
