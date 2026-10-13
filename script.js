@@ -131,7 +131,7 @@ const translations = {
         "ai-feat-time-title": "Gestion de l'heure et du temps :",
         "ai-feat-time-desc": "Mise en place d'un cycle temporel régissant la progression de la journée et impactant directement le comportement du climat et des statistiques du joueur.",
         "ai-feat-time-p1" : "Horloge de jeu avec cycle jour / nuit",
-        "ai-feat-time-p2" : "Le climat change selon l'heure de la journée";
+        "ai-feat-time-p2" : "Le climat change selon l'heure de la journée",
         "ai-feat-time-p3" : "L'heure et le climat influencent directement les stats du joueur",
         "ai-feat-time-caption" : "Le cycle jour / nuit",
         
