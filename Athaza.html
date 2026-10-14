@@ -33,28 +33,28 @@
 </head>
 
 <body>
-
-    <header>
+        <header>
         <div class="header-container">
             <div class="profile-pic-wrapper">
-                <img src="assets/images/photo.jpg" alt="Photo de Alexandra Goret" class="profile-pic">
+                <img src="assets/images/photo.jpg" alt="Alexandra Goret" width="180" height="180" class="profile-pic">
             </div>
             <div class="header-text">
                 <h1>Goret Alexandra</h1>
-                <p class="description">Étudiante en développement de jeux vidéo</p>
+                <p class="description" data-i18n="hero-title">Étudiante en développement de jeux vidéo</p>
             </div>
-            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+            <a href="documents/CV_Goret_Alexandra.pdf" class="cv-button" target="_blank" rel="noopener noreferrer"
+                data-i18n="cv-button">
                 Télécharger mon CV
             </a>
         </div>
     </header>
 
     <nav class="navigation">
-        <a href="index.html">Accueil</a>
-        <a href="a-propos.html">À propos de moi</a>
-        <a href="competences.html">Compétences</a>
-        <a href="projets.html">Projets</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="nav-home">Accueil</a>
+        <a href="a-propos.html" data-i18n="nav-about">À propos de moi</a>
+        <a href="competences.html" data-i18n="nav-skills">Compétences</a>
+        <a href="projets.html" data-i18n="nav-projects">Projets</a>
+        <a href="contact.html" data-i18n="nav-contact">Contact</a>
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
             <span id="theme-icon">☀️</span>
         </button>
@@ -80,7 +80,6 @@
             <div class="gallery-carousel">
                 <div class="carousel-track">
                     <img src="assets/images/Athaza/1.png" alt="Capture Athaza 1" width="600" height="338">
-                    <img src="assets/images/Athaza/2.png" alt="Capture Athaza 2" width="600" height="338">
                     <img src="assets/images/Athaza/3.png" alt="Capture Athaza 3" width="600" height="338">
                     <img src="assets/images/Athaza/4.png" alt="Capture Athaza 4" width="600" height="338">
                     <img src="assets/images/Athaza/5.png" alt="Capture Athaza 5" width="600" height="338">
@@ -127,7 +126,7 @@
                     </ul>
                 </div>
                 <figure class="contribution-media">
-                    <img src="assets/images/QG.png" alt="Capture de l'inventaire en jeu" loading="lazy">
+                    <img src="assets/images/Athaza/base.png" alt="Capture de l'inventaire en jeu" loading="lazy">
                     <figcaption data-i18n="at-feat-QG-caption">la base</figcaption>
                 </figure>
             </article>
@@ -144,7 +143,7 @@
                     </ul>
                 </div>
                 <figure class="contribution-media">
-                    <img src="assets/images/stats.png" alt="Capture des jauges de survie" loading="lazy">
+                    <img src="assets/images/Athaza/npc.png" alt="Capture des jauges de survie" loading="lazy">
                     <figcaption data-i18n="at-feat-npc-caption">les npcs</figcaption>
                 </figure>
             </article>
@@ -156,11 +155,10 @@
                     <ul>
                         <li data-i18n="at-feat-txt-p1"></li>
                         <li data-i18n="at-feat-txt-p2"></li>
-                        <li data-i18n="at-feat-txt-p3"></li>
                     </ul>
                 </div>
                 <figure class="contribution-media">
-                    <img src="assets/images/time.png" alt="Capture du cycle jour/nuit" loading="lazy">
+                    <img src="assets/images/Athaza/texte.png" alt="Gestion des texte" loading="lazy">
                     <figcaption data-i18n="at-feat-txt-caption">les textes</figcaption>
                 </figure>
             </article>

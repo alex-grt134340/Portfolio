@@ -65,38 +65,30 @@
 
     <section>
         <h2>Projet de soutenance</h2>
-
         <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
         <div class="about-box">
-            <p class="highlight-text" data-i18n="pp-intro">
-                Jeu de survie développé sur Unity.
-            </p>
-            <p data-i18n="pp-overview">
-                Dans un univers post-apocalyptique, le joueur doit gérer ses ressources et ses constantes vitales pour
-                survivre face aux éléments et au temps qui passe.
-            </p>
-
-            <!-- CARROUSEL / GALERIE D'IMAGES DÉFILANTES -->
-            <div class="gallery-carousel">
-                <div class="carousel-track">
-                    <img src="assets/images/AfterImpact/AfterImpact1.png" alt="Capture After Impact 1" width="600"
-                        height="338">
-                    <img src="assets/images/AfterImpact/AfterImpact2.png" alt="Capture After Impact 2" width="600"
-                        height="338">
-                    <img src="assets/images/AfterImpact/AfterImpact3.png" alt="Capture After Impact 3" width="600"
-                        height="338">
-                    <img src="assets/images/AfterImpact/AfterImpact4.png" alt="Capture After Impact 4" width="600"
-                        height="338">
-                    <img src="assets/images/AfterImpact/AfterImpact5.png" alt="Capture After Impact 4" width="600"
-                        height="338">
-                </div>
-            </div>
+            <p class="highlight-text" data-i18n="pp-intro"></p>
+            <p data-i18n="pp-overview"></p>
         </div>
-
         <!-- MES CONTRIBUTIONS TECHNIQUES -->
         <h3 style="margin-top: 40px;" data-i18n="pp-contrib-title">Mes Réalisations</h3>
+        <div class="about-box">
+            <li data-i18n="pp-realisations-p1">API Backend (PlayFab-like) : Développement d’une API sur mesure robuste
+                sous ASP.NET Core pour la
+                gestion sécurisée des profils (JWT) et des données de jeu.</li>
+            <li data-i18n="pp-realisations-p2">Matchmaking : Algorithme de mise en relation des joueurs basé sur la
+                latence et les compétences via un
+                service d'arrière-plan synchrone.</li>
+            <li data-i18n="pp-realisations-p3">Gestion des Lobbies & Instances : Système de synchronisation en temps
+                réel des salons d'attente et du
+                cycle de vie des sessions de jeu.</li>
+            <li data-i18n="pp-realisations-p4">Chat temps réel : Intégration d’une messagerie instantanée
+                bidirectionnelle à faible latence optimisée
+                avec SignalR.</li>
+        </div>
     </section>
 
     <script src="script.js"></script>
 </body>
+
 </html>
