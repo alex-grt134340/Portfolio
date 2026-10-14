@@ -385,13 +385,11 @@ const translations = {
         // Portfolio
         "portfolio-intro": "Development of my personal portfolio website.",
         "portfolio-overview": "Interactive showcase presenting my background and video game projects.",
-        "portfolio-itch-btn": "View Code / Website",
         "portfolio-contrib-title": "Key Features",
         "portfolio-feat-dev-title": "Design & Integration",
         "portfolio-feat-dev-desc": "Created a clean, responsive, and bilingual web interface.",
         "portfolio-feat-dev-p1": "Modern HTML/CSS structure with full bilingual support (FR/EN)",
         "portfolio-feat-dev-p2": "Optimized responsiveness for all screen sizes",
-        "portfolio-feat-dev-caption": "The Portfolio"
     }
 };
 
