@@ -91,6 +91,12 @@ const translations = {
         "project-portfolio-desc": "Création de mon portfolio personnel.",
         "project-destinyofgobo-desc": "Projet de jeu vidéo.",
         "project-projetdesoutenance-desc": "Projet de soutenance.",
+        "project-project-date": "Septembre 2026 – en cours",
+        "project-portfolio-date": "Juin 2026 – en cours",
+        "project-afterimpact-date": "Janvier 2026 – Mai 2026",
+        "project-tycoon-date": "Septembre 2025 – Décembre 2025",
+        "project-athaza-date": "Janvier 2025 – Mai 2025",
+        "project-dg-date": "Janvier 2024 – Mai 2024",
 
         "contact-main-title": "Me contacter",
 
@@ -303,6 +309,13 @@ const translations = {
         "project-portfolio-desc": "Creation of my personal portfolio.",
         "project-destinyofgobo-desc": "Video game project.",
         "project-projetdesoutenance-desc": "Defense project.",
+
+        "project-project-date": "September 2026 – ongoing",
+        "project-portfolio-date": "June 2026 – ongoing",
+        "project-afterimpact-date": "January 2026 – May 2026",
+        "project-tycoon-date": "September 2025 – December 2025",
+        "project-athaza-date": "January 2025 – May 2025",
+        "project-dg-date": "January 2024 – May 2024",
 
         "contact-main-title": "Contact Me",
 

@@ -25,7 +25,6 @@ html { scroll-behavior: smooth; min-height: 100%; background-color: var(--bg-mai
 html:has(body.dark-theme) { background-color: #140709; }
 ::selection { background-color: var(--primary); color: #fff; }
 *, *::before, *::after { box-sizing: border-box; }
-/* FIX TÉLÉPHONE n°1 : aucun élément ne doit dépasser les 360px */
 img, video, iframe { max-width: 100%; }
 img { height: auto; }
 body {
@@ -38,7 +37,6 @@ h1, h2 { text-shadow: 0 0 15px var(--primary-glow); }
 h2, h3 { color: var(--primary); }
 h3 { margin-top: 0; }
 p { color: var(--text-muted); }
-/* FIX TÉLÉPHONE n°2 : padding fluide + ancre qui ne passe pas sous la nav */
 section { max-width: 1100px; margin: auto; padding: clamp(40px, 7vw, 60px) clamp(16px, 4vw, 20px); position: relative; scroll-margin-top: 86px; }
 header[id] { scroll-margin-top: 10px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -48,9 +46,6 @@ header[id] { scroll-margin-top: 10px; }
     display: flex; justify-content: center; align-items: center; gap: 8px;
     background: var(--bg-navigation); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 10px 12px;
-    /* FIX TÉLÉPHONE n°3 : la cause n°1 du débordement à 360px.
-       Avant : max-width: fit-content sans wrap -> les liens dépassaient l'écran.
-       Après : la barre s'enroule, reste collée en haut, ne dépasse jamais. */
     width: calc(100% - 20px); max-width: 720px; margin: 12px auto;
     flex-wrap: wrap;
     position: sticky; top: calc(10px + env(safe-area-inset-top, 0px)); z-index: 50;
@@ -60,7 +55,6 @@ header[id] { scroll-margin-top: 10px; }
 .navigation a {
     color: var(--text-muted); text-decoration: none; padding: 10px 14px; font-size: 0.95em; font-weight: 500;
     border-radius: 20px; transition: var(--transition); white-space: nowrap;
-    /* FIX TÉLÉPHONE n°4 : zone tactile 44px mini (reco Apple/Google) */
     display: inline-flex; align-items: center; min-height: 44px;
 }
 .navigation a:hover { color: var(--accent); background-color: rgba(178, 32, 48, 0.15); }
@@ -68,7 +62,6 @@ header[id] { scroll-margin-top: 10px; }
 .theme-toggle-btn, .lang-toggle-btn {
     border: 1px solid var(--control-border); color: var(--text-main); border-radius: 20px; cursor: pointer;
     align-items: center; justify-content: center; transition: var(--transition);
-    /* FIX TÉLÉPHONE n°4 (suite) : boutons tactiles */
     min-height: 44px; min-width: 44px;
 }
 .theme-toggle-btn { background: var(--bg-card); padding: 8px 14px; font-size: 1.1em; display: flex; }
@@ -80,20 +73,17 @@ header[id] { scroll-margin-top: 10px; }
 header { background-color: var(--bg-header); padding: clamp(32px, 6vw, 60px) clamp(16px, 4vw, 20px); }
 .header-container { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: auto; gap: clamp(20px, 4vw, 30px); position: relative; width: 100%; }
 .header-text { display: flex; flex-direction: column; justify-content: center; min-width: 0; flex: 1; }
-/* FIX TÉLÉPHONE n°5 : typo fluide. Avant 2.5em fixe = énorme à 360px. Après : clamp. */
 .header-text h1 { margin: 0; font-size: clamp(1.85rem, 7.5vw, 2.5em); color: var(--primary); line-height: 1.12; }
 .header-text .description { margin-top: 10px; font-size: clamp(0.98rem, 3.8vw, 1.1em); color: var(--text-muted); }
 
 .cv-button {
     background-color: var(--primary); color: #fff; padding: 12px 24px; border-radius: 8px;
     text-decoration: none; font-weight: bold; box-shadow: 0 4px 14px var(--primary-glow); transition: var(--transition);
-    /* FIX TÉLÉPHONE n°6 : bouton facile à taper */
     display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px;
 }
 .cv-button:hover { background-color: var(--accent); color: var(--bg-header); transform: translateY(-2px); box-shadow: 0 6px 20px var(--accent-glow); }
 .cv-button:active { transform: translateY(0); }
 
-/* FIX TÉLÉPHONE n°7 : photo qui rétrécit avec l'écran au lieu de rester à 190px */
 .profile-pic-wrapper { position: relative; width: clamp(150px, 42vw, 190px); height: clamp(150px, 42vw, 190px); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 auto; }
 .profile-pic-wrapper::before {
     content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: 0;
@@ -131,8 +121,6 @@ header { background-color: var(--bg-header); padding: clamp(32px, 6vw, 60px) cla
 .skill-icons img:hover { transform: scale(1.2); }
 
 .icon { position: relative; width: 55px; height: 55px; flex: 0 0 55px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-/* FIX TÉLÉPHONE n°9 : le tooltip sortait de l'écran en bas (-35px).
-   Il s'affiche maintenant AU-DESSUS, et aussi au toucher (focus/active), pas qu'au survol. */
 .icon span {
     position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(4px);
     background-color: var(--bg-header); color: var(--text-main); padding: 6px 12px; border-radius: 6px;
@@ -239,27 +227,23 @@ html.i18n-loading body { visibility: hidden; }
 .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 1rem 0 0; }
 .tech-tags li { padding: 6px 12px; border-radius: 999px; border: 1px solid currentColor; font-size: 0.85rem; opacity: 0.85; }
 
-/* ── Responsive & accessibilité ─────────────────────────────
-   ORDRE : du plus large au plus étroit. Tout ce qui suit = FIX TÉLÉPHONE. */
+/* ── Responsive & accessibilité ───────────────────────────── ORDRE : du plus large au plus étroit. Tout ce qui suit = FIX TÉLÉPHONE. */
 @media (max-width: 800px) { .skills-container { grid-template-columns: 1fr; gap: 16px; } }
 @media (max-width: 768px) {
     .projects-container, .contribution { grid-template-columns: 1fr; }
     .header-container { flex-direction: column; text-align: center; align-items: center; }
-    /* FIX : centre le texte + le bouton quand on passe en colonne */
     .header-text { align-items: center; width: 100%; }
     .profile-pic { margin-bottom: 0; }
     .about-content { flex-direction: column; align-items: center; }
     .school-image { width: 100%; max-width: 400px; }
     .contribution { gap: 0; }
     .contribution.reverse .contribution-media { order: 0; }
-    /* FIX TÉLÉPHONE n°10 : ANTI-ZOOM iPhone.
-       iOS zoome dès qu'un champ fait moins de 16px. On force 16px sur téléphone. */
+
     .form-group input, .form-group textarea { font-size: 16px; }
     .submit-btn { align-self: stretch; justify-content: center; width: 100%; }
 }
 @media (max-width: 600px) {
     .soft-skills, .hard-skills { grid-template-columns: 1fr; }
-    /* FIX : nav compacte qui ne déborde plus */
     .navigation { gap: 4px; padding: 8px; border-radius: 18px; }
     .navigation a { padding: 10px 12px; font-size: 0.88em; }
     .theme-toggle-btn, .lang-toggle-btn { margin-left: 0; }
@@ -271,7 +255,6 @@ html.i18n-loading body { visibility: hidden; }
     .cv-button { width: 100%; }
     .header-text .cv-button { max-width: 340px; }
 }
-/* FIX TÉLÉPHONE n°11 : très petits écrans (iPhone SE 375px, Galaxy 360px) */
 @media (max-width: 380px) {
     .navigation a { padding: 10px 10px; font-size: 0.84em; }
     .soft-skills li, .hard-skills li { padding: 18px; }
