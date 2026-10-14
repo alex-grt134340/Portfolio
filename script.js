@@ -198,13 +198,11 @@ const translations = {
         // Portfolio
         "portfolio-intro": "Développement de mon site portfolio personnel.",
         "portfolio-overview": "Vitrine interactive présentant mon parcours et mes projets de jeux vidéo.",
-        "portfolio-itch-btn": "Voir le code / Site",
         "portfolio-contrib-title": "Réalisations",
         "portfolio-feat-dev-title": "Intégration et design",
         "portfolio-feat-dev-desc": "Création d'un design épuré, responsive et multilingue.",
         "portfolio-feat-dev-p1": "Structure HTML/CSS moderne avec support bilingue (FR/EN)",
         "portfolio-feat-dev-p2": "Optimisation pour la lisibilité sur tous types d'écrans",
-        "portfolio-feat-dev-caption": "Le portfolio"
 
     },
     en: {
