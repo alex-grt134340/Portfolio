@@ -32,7 +32,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="header-container">
             <div class="profile-pic-wrapper">
@@ -63,23 +62,93 @@
         </button>
     </nav>
 
-   <section>
+    <section>
         <h2>Portfolio</h2>
         <div class="about-box">
             <p class="highlight-text" data-i18n="portfolio-intro"></p>
-            <p data-i18n="portoflio-overview"></p>
+            <p data-i18n="portfolio-overview"></p>
+            <p data-i18n="portfolio-structure"></p>
+
+            <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>localStorage</li>
+                <li>Google Fonts</li>
+            </ul>
         </div>
     </section>
 
     <section>
-        <div class="about-box">
-            <p class="highlight-text" data-i18n="portfolio-contrib-title"></p>
-            <li data-i18n="portfolio-feat-dev-p1"></li>
-            <li data-i18n="portfolio-feat-dev-p2"></li>
+        <h3 data-i18n="portfolio-contrib-title"></h3>
+
+        <div class="contributions">
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="portfolio-feat-dev-title"></h4>
+                    <p data-i18n="portfolio-feat-dev-desc"></p>
+                    <ul>
+                        <li data-i18n="portfolio-feat-dev-p1"></li>
+                        <li data-i18n="portfolio-feat-dev-p2"></li>
+                        <li data-i18n="portfolio-feat-dev-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/portfolio-design.png" alt="Aperçu du design du portfolio" loading="lazy">
+                    <figcaption data-i18n="portfolio-feat-dev-caption"></figcaption>
+                </figure>
+            </article>
+
+            <article class="contribution reverse">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="portfolio-feat-theme-title"></h4>
+                    <p data-i18n="portfolio-feat-theme-desc"></p>
+                    <ul>
+                        <li data-i18n="portfolio-feat-theme-p1"></li>
+                        <li data-i18n="portfolio-feat-theme-p2"></li>
+                        <li data-i18n="portfolio-feat-theme-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/portfolio-theme.png" alt="Comparaison du thème clair et du thème sombre"
+                        loading="lazy">
+                    <figcaption data-i18n="portfolio-feat-theme-caption"></figcaption>
+                </figure>
+            </article>
+
+            <article class="contribution">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="portfolio-feat-lang-title"></h4>
+                    <p data-i18n="portfolio-feat-lang-desc"></p>
+                    <ul>
+                        <li data-i18n="portfolio-feat-lang-p1"></li>
+                        <li data-i18n="portfolio-feat-lang-p2"></li>
+                        <li data-i18n="portfolio-feat-lang-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/portfolio-lang.png" alt="Le site en français et en anglais" loading="lazy">
+                    <figcaption data-i18n="portfolio-feat-lang-caption"></figcaption>
+                </figure>
+            </article>
+
+            <article class="contribution reverse">
+                <div class="contribution-text about-box">
+                    <h4 class="tech-accent" data-i18n="portfolio-feat-a11y-title"></h4>
+                    <p data-i18n="portfolio-feat-a11y-desc"></p>
+                    <ul>
+                        <li data-i18n="portfolio-feat-a11y-p1"></li>
+                        <li data-i18n="portfolio-feat-a11y-p2"></li>
+                        <li data-i18n="portfolio-feat-a11y-p3"></li>
+                    </ul>
+                </div>
+                <figure class="contribution-media">
+                    <img src="assets/images/portfolio-a11y.png" alt="Navigation et boutons du portfolio" loading="lazy">
+                    <figcaption data-i18n="portfolio-feat-a11y-caption"></figcaption>
+                </figure>
+            </article>
         </div>
     </section>
-
-
     <script src="script.js"></script>
 </body>
 

@@ -1,917 +1,286 @@
-/* ==========================================================================
-   VARIABLES & CONFIGURATION DU THÈME (VERSION BORDEAUX)
-   ========================================================================== */
-:root {
-    /* Thème clair - par défaut */
-    --bg-main: #fcf8f8;
-    --bg-header: #f3e8e9;
-    --bg-card: rgba(255, 255, 255, 0.75);
-    --bg-card-hover: rgba(255, 255, 255, 0.95);
-    --bg-control: rgba(255, 255, 255, 0.75);
-    --bg-navigation: rgba(243, 232, 233, 0.85);
+:root { /* Thème clair - par défaut */
+    --bg-main: #fcf8f8; --bg-header: #f3e8e9;
+    --bg-card: rgba(255, 255, 255, 0.75); --bg-card-hover: rgba(255, 255, 255, 0.95);
+    --bg-control: rgba(255, 255, 255, 0.75); --bg-navigation: rgba(243, 232, 233, 0.85);
     --control-border: rgba(148, 19, 34, 0.3);
-
-    --primary: #941322;
-    --primary-glow: rgba(148, 19, 34, 0.15);
-    --secondary: #c84b57;
-    --accent: #b88322;
-    --accent-glow: rgba(184, 131, 34, 0.2);
-
-    --text-main: #1c0a0c;
-    --text-muted: #574144;
-
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Poppins', sans-serif;
+    --primary: #941322; --primary-glow: rgba(148, 19, 34, 0.15); --secondary: #c84b57;
+    --accent: #b88322; --accent-glow: rgba(184, 131, 34, 0.2);
+    --text-main: #1c0a0c; --text-muted: #574144;
+    --font-body: 'Inter', system-ui, sans-serif; --font-heading: 'Poppins', system-ui, sans-serif;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Thème sombre (Bordeaux) */
-html.dark-theme,
-body.dark-theme {
-    --bg-main: #140709;
-    --bg-header: #0a0203;
-    --bg-card: rgba(39, 15, 19, 0.45);
-    --bg-card-hover: rgba(53, 18, 22, 0.6);
-    --bg-control: rgba(10, 2, 3, 0.4);
-    --bg-navigation: rgba(10, 2, 3, 0.6);
+:is(html, body).dark-theme { /* Thème sombre */
+    --bg-main: #140709; --bg-header: #0a0203;
+    --bg-card: rgba(39, 15, 19, 0.45); --bg-card-hover: rgba(53, 18, 22, 0.6);
+    --bg-control: rgba(10, 2, 3, 0.4); --bg-navigation: rgba(10, 2, 3, 0.6);
     --control-border: rgba(178, 32, 48, 0.3);
-
-    --primary: #b22030;
-    --primary-glow: rgba(178, 32, 48, 0.35);
-    --secondary: #721c24;
-    --accent: #e5b869;
-    --accent-glow: rgba(229, 184, 105, 0.3);
-
-    --text-main: #ffffff;
-    --text-muted: #e2d1d3;
+    --primary: #b22030; --primary-glow: rgba(178, 32, 48, 0.35); --secondary: #721c24;
+    --accent: #e5b869; --accent-glow: rgba(229, 184, 105, 0.3);
+    --text-main: #ffffff; --text-muted: #e2d1d3;
 }
 
-/* Sélection de texte et scroll fluide */
-html {
-    scroll-behavior: smooth;
-    min-height: 100%;
-    background-color: var(--bg-main);
-    overflow-y: scroll;
-}
-
-/* Garde le fond de html sombre si la classe est seulement sur body */
-html:has(body.dark-theme) {
-    background-color: #140709;
-}
-
-::selection {
-    background-color: var(--primary);
-    color: var(--text-main);
-}
-
-/* ==========================================================================
-   STYLE GLOBAL
-   ========================================================================== */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
+/* ── Global ───────────────────────────────────────────────── */
+html { scroll-behavior: smooth; min-height: 100%; background-color: var(--bg-main); overflow-y: scroll; -webkit-text-size-adjust: 100%; }
+html:has(body.dark-theme) { background-color: #140709; }
+::selection { background-color: var(--primary); color: #fff; }
+*, *::before, *::after { box-sizing: border-box; }
+/* FIX TÉLÉPHONE n°1 : aucun élément ne doit dépasser les 360px */
+img, video, iframe { max-width: 100%; }
+img { height: auto; }
 body {
-    font-family: var(--font-body);
-    line-height: 1.6;
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
+    font-family: var(--font-body); line-height: 1.6; margin: 0; padding: 0;
+    background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.5px; text-wrap: balance; }
+h1, h2 { text-shadow: 0 0 15px var(--primary-glow); }
+h2, h3 { color: var(--primary); }
+h3 { margin-top: 0; }
+p { color: var(--text-muted); }
+/* FIX TÉLÉPHONE n°2 : padding fluide + ancre qui ne passe pas sous la nav */
+section { max-width: 1100px; margin: auto; padding: clamp(40px, 7vw, 60px) clamp(16px, 4vw, 20px); position: relative; scroll-margin-top: 86px; }
+header[id] { scroll-margin-top: 10px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-h1,
-h2,
-h3 {
-    font-family: var(--font-heading);
-    letter-spacing: 0.5px;
-}
-
-h1,
-h2 {
-    text-shadow: 0 0 15px var(--primary-glow);
-}
-
-h2,
-h3 {
-    color: var(--primary);
-}
-
-h3 {
-    margin-top: 0;
-}
-
-p {
-    color: var(--text-muted);
-}
-
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
-    position: relative;
-}
-
-/* ==========================================================================
-   NAVIGATION & BARRE FIXE
-   ========================================================================== */
+/* ── Navigation & boutons ─────────────────────────────────── */
 .navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background: var(--bg-navigation);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 12px 25px;
-    max-width: fit-content;
-    margin: 30px auto;
-    border-radius: 30px;
-    border: 1px solid var(--control-border);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: flex; justify-content: center; align-items: center; gap: 8px;
+    background: var(--bg-navigation); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 10px 12px;
+    /* FIX TÉLÉPHONE n°3 : la cause n°1 du débordement à 360px.
+       Avant : max-width: fit-content sans wrap -> les liens dépassaient l'écran.
+       Après : la barre s'enroule, reste collée en haut, ne dépasse jamais. */
+    width: calc(100% - 20px); max-width: 720px; margin: 12px auto;
+    flex-wrap: wrap;
+    position: sticky; top: calc(10px + env(safe-area-inset-top, 0px)); z-index: 50;
+    border-radius: 22px;
+    border: 1px solid var(--control-border); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
-
 .navigation a {
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 8px 16px;
-    font-size: 0.95em;
-    font-weight: 500;
-    border-radius: 20px;
-    transition: var(--transition);
+    color: var(--text-muted); text-decoration: none; padding: 10px 14px; font-size: 0.95em; font-weight: 500;
+    border-radius: 20px; transition: var(--transition); white-space: nowrap;
+    /* FIX TÉLÉPHONE n°4 : zone tactile 44px mini (reco Apple/Google) */
+    display: inline-flex; align-items: center; min-height: 44px;
 }
+.navigation a:hover { color: var(--accent); background-color: rgba(178, 32, 48, 0.15); }
 
-.navigation a:hover {
-    color: var(--accent);
-    background-color: rgba(178, 32, 48, 0.15);
+.theme-toggle-btn, .lang-toggle-btn {
+    border: 1px solid var(--control-border); color: var(--text-main); border-radius: 20px; cursor: pointer;
+    align-items: center; justify-content: center; transition: var(--transition);
+    /* FIX TÉLÉPHONE n°4 (suite) : boutons tactiles */
+    min-height: 44px; min-width: 44px;
 }
+.theme-toggle-btn { background: var(--bg-card); padding: 8px 14px; font-size: 1.1em; display: flex; }
+.lang-toggle-btn { background: transparent; padding: 6px 12px; font-size: 0.85em; font-weight: 600; display: inline-flex; margin-left: 5px; }
+.theme-toggle-btn:hover { background: var(--bg-card-hover); border-color: var(--primary); transform: scale(1.05); }
+.lang-toggle-btn:hover { background-color: rgba(178, 32, 48, 0.15); border-color: var(--accent); transform: scale(1.08); }
 
-.theme-toggle-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--control-border);
-    color: var(--text-main);
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.theme-toggle-btn:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--primary);
-    transform: scale(1.05);
-}
-
-.lang-toggle-btn {
-    background: transparent;
-    border: 1px solid var(--control-border);
-    color: var(--text-main);
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85em;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    margin-left: 5px;
-}
-
-.lang-toggle-btn:hover {
-    background-color: rgba(178, 32, 48, 0.15);
-    border-color: var(--accent);
-    transform: scale(1.08);
-}
-
-/* ==========================================================================
-   HEADER / HERO SECTION
-   ========================================================================== */
-header {
-    background-color: var(--bg-header);
-    padding: 60px 20px;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: auto;
-    gap: 30px;
-    position: relative;
-}
-
-.header-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.header-text h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: var(--primary);
-}
-
-.header-text .description {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: var(--text-muted);
-}
+/* ── Header / hero ────────────────────────────────────────── */
+header { background-color: var(--bg-header); padding: clamp(32px, 6vw, 60px) clamp(16px, 4vw, 20px); }
+.header-container { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: auto; gap: clamp(20px, 4vw, 30px); position: relative; width: 100%; }
+.header-text { display: flex; flex-direction: column; justify-content: center; min-width: 0; flex: 1; }
+/* FIX TÉLÉPHONE n°5 : typo fluide. Avant 2.5em fixe = énorme à 360px. Après : clamp. */
+.header-text h1 { margin: 0; font-size: clamp(1.85rem, 7.5vw, 2.5em); color: var(--primary); line-height: 1.12; }
+.header-text .description { margin-top: 10px; font-size: clamp(0.98rem, 3.8vw, 1.1em); color: var(--text-muted); }
 
 .cv-button {
-    background-color: var(--primary);
-    color: var(--text-main);
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 14px var(--primary-glow);
-    transition: var(--transition);
+    background-color: var(--primary); color: #fff; padding: 12px 24px; border-radius: 8px;
+    text-decoration: none; font-weight: bold; box-shadow: 0 4px 14px var(--primary-glow); transition: var(--transition);
+    /* FIX TÉLÉPHONE n°6 : bouton facile à taper */
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px;
 }
+.cv-button:hover { background-color: var(--accent); color: var(--bg-header); transform: translateY(-2px); box-shadow: 0 6px 20px var(--accent-glow); }
+.cv-button:active { transform: translateY(0); }
 
-.cv-button:hover {
-    background-color: var(--accent);
-    color: var(--bg-header);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-glow);
-}
-
-.cv-button:active {
-    transform: translateY(0);
-}
-
-.profile-pic-wrapper {
-    position: relative;
-    width: 190px;
-    height: 190px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* FIX TÉLÉPHONE n°7 : photo qui rétrécit avec l'écran au lieu de rester à 190px */
+.profile-pic-wrapper { position: relative; width: clamp(150px, 42vw, 190px); height: clamp(150px, 42vw, 190px); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 auto; }
 .profile-pic-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
+    content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: 0;
     background: conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary));
-    z-index: 0;
     animation: rotateGradient 4s linear infinite;
 }
+.profile-pic { width: calc(100% - 10px); height: calc(100% - 10px); border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: none; }
 
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-    border: none;
+/* ── Cartes (glassmorphism) ───────────────────────────────── */
+.about-box, .project, .skill, .soft-skills li, .hard-skills li {
+    background: var(--bg-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px 0 rgba(10, 2, 3, 0.5);
+    padding: 25px; border-radius: 12px; color: var(--text-main); text-decoration: none; transition: var(--transition);
+    min-width: 0;
+}
+.about-box:hover, .project:hover, .skill:hover, .soft-skills li:hover, .hard-skills li:hover {
+    transform: translateY(-5px); border-color: rgba(178, 32, 48, 0.4);
+    box-shadow: 0 10px 30px rgba(178, 32, 48, 0.25); background: var(--bg-card-hover);
 }
 
-/* ==========================================================================
-   GLASSMORPHISM & CARTES
-   ========================================================================== */
-.about-box,
-.project,
-.skill,
-.soft-skills li,
-.hard-skills li {
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(10, 2, 3, 0.5);
-    padding: 25px;
-    border-radius: 12px;
-    color: var(--text-main);
-    text-decoration: none;
-    transition: var(--transition);
-}
+/* ── À propos & école ─────────────────────────────────────── */
+.about-section { max-width: 1100px; margin: auto; padding: 20px clamp(16px, 4vw, 20px) 40px; }
+.about-content { display: flex; align-items: flex-start; gap: clamp(20px, 4vw, 50px); }
+.about-text { flex: 1; min-width: 0; }
+/* FIX TÉLÉPHONE n°8 : 350px fixe -> min(100%, 350px) */
+.school-image { width: min(100%, 350px); flex-shrink: 0; margin: 0; }
+.school-image img { width: 100%; border-radius: 15px; object-fit: cover; box-shadow: 0 0 25px rgba(178, 32, 48, 0.2); transition: var(--transition); }
+.school-image img:hover { transform: scale(1.03) rotate(1deg); }
 
-.about-box:hover,
-.project:hover,
-.skill:hover,
-.soft-skills li:hover,
-.hard-skills li:hover {
-    transform: translateY(-5px);
-    border-color: rgba(178, 32, 48, 0.4);
-    box-shadow: 0 10px 30px rgba(178, 32, 48, 0.25);
-    background: var(--bg-card-hover);
-}
+/* ── Projets & compétences ────────────────────────────────── */
+.projects-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 3vw, 25px); margin-top: 30px; }
+.skills-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 3vw, 40px); text-align: center; }
+.skill-icons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.skill-icons img, .icon img { width: 40px; height: 40px; object-fit: contain; transition: var(--transition); }
+.skill-icons img:hover { transform: scale(1.2); }
 
-/* ==========================================================================
-   SECTION À PROPOS & ÉCOLE
-   ========================================================================== */
-.about-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px 20px 40px;
-}
-
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.school-image {
-    width: 350px;
-    flex-shrink: 0;
-}
-
-.school-image img {
-    width: 100%;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 0 25px rgba(178, 32, 48, 0.2);
-    transition: var(--transition);
-}
-
-.school-image img:hover {
-    transform: scale(1.03) rotate(1deg);
-}
-
-/* ==========================================================================
-   PROJETS & COMPÉTENCES
-   ========================================================================== */
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    text-align: center;
-}
-
-.skill-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.skill-icons img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: var(--transition);
-}
-
-.skill-icons img:hover {
-    transform: scale(1.2);
-}
-
-.icon {
-    position: relative;
-    width: 55px;
-    height: 55px;
-    flex: 0 0 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-}
-
-.icon img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    flex-shrink: 0;
-    transition: var(--transition);
-}
-
+.icon { position: relative; width: 55px; height: 55px; flex: 0 0 55px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+/* FIX TÉLÉPHONE n°9 : le tooltip sortait de l'écran en bas (-35px).
+   Il s'affiche maintenant AU-DESSUS, et aussi au toucher (focus/active), pas qu'au survol. */
 .icon span {
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--bg-header);
-    color: var(--text-main);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    border: 1px solid var(--control-border);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(4px);
+    background-color: var(--bg-header); color: var(--text-main); padding: 6px 12px; border-radius: 6px;
+    font-size: 0.8em; white-space: nowrap; opacity: 0; pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); border: 1px solid var(--control-border);
+    transition: opacity 0.25s ease, transform 0.25s ease; z-index: 5; max-width: 70vw; overflow: hidden; text-overflow: ellipsis;
 }
+.icon:hover img { transform: scale(1.15); }
+.icon:hover span, .icon:focus-visible span, .icon:active span { opacity: 1; transform: translateX(-50%) translateY(0); }
+.icon img.icon-large { width: 90px; height: 90px; }
 
-.icon:hover img {
-    transform: scale(1.15);
-}
+.soft-skills, .hard-skills { list-style: none; padding: 0; margin: 30px auto 0; max-width: 700px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px clamp(12px, 3vw, 40px); }
+.soft-skills li, .hard-skills li { display: flex; align-items: center; gap: 12px; text-align: left; }
+.list-emoji { font-size: 1.2em; flex-shrink: 0; }
+.contact-icon { width: 30px; height: 30px; vertical-align: middle; margin-right: 10px; }
+.contact-icon-wrapper { display: inline-flex; align-items: center; vertical-align: middle; margin-right: 8px; }
 
-.icon:hover span {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-4px);
-}
-
-.soft-skills,
-.hard-skills {
-    list-style: none;
-    padding: 0;
-    margin: 30px auto 0;
-    max-width: 700px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 40px;
-}
-
-.soft-skills li,
-.hard-skills li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-align: left;
-}
-
-.list-emoji {
-    font-size: 1.2em;
-}
-
-.contact-icon {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.contact-icon-wrapper {
-    display: inline-flex;
-    align-items: center;
-    vertical-align: middle;
-    margin-right: 8px;
-    /* Petit espace avant le texte */
-}
-
-/* ==========================================================================
-   ANIMATIONS
-   ========================================================================== */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skill {
-    animation: fadeUp 0.8s ease both;
-}
-
-section+section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    z-index: 1;
+/* ── Animations ───────────────────────────────────────────── */
+.scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-animate.show { opacity: 1; transform: translateY(0); }
+.skill { animation: fadeUp 0.8s ease both; }
+section + section::before {
+    content: ""; position: absolute; top: 0; left: 10%; width: 80%; height: 1px; z-index: 1;
     background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
-    background-size: 200% 100%;
-    animation: gradientAnimation 8s linear infinite;
-    box-shadow: 0 0 12px var(--primary-glow);
+    background-size: 200% 100%; animation: gradientAnimation 8s linear infinite; box-shadow: 0 0 12px var(--primary-glow);
 }
+@keyframes rotateGradient { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes gradientAnimation { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-@keyframes rotateGradient {
-    0% {
-        transform: rotate(0deg);
-    }
+/* ── Textes & contenus ────────────────────────────────────── */
+.about-intro { font-size: clamp(1rem, 3.5vw, 1.1em); font-weight: 500; color: var(--text-main); margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 15px; }
+.profile-details { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.profile-details li { display: flex; justify-content: flex-start; align-items: center; background: none !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+.profile-details .label { font-weight: 600; color: var(--accent); width: 140px; flex-shrink: 0; }
+.profile-details .value { color: var(--text-muted); overflow-wrap: anywhere; }
+.highlight-text { font-size: clamp(1.02rem, 3.6vw, 1.15em); color: var(--text-main); font-weight: 500; margin-bottom: 15px; }
+.tech-accent { color: var(--accent); font-weight: 600; text-shadow: 0 0 10px var(--accent-glow); }
+.about-box p { margin: 0 0 12px; line-height: 1.7; overflow-wrap: break-word; }
+.about-box p:last-child { margin-bottom: 0; }
 
-    100% {
-        transform: rotate(360deg);
-    }
+/* ── Contact & liens ──────────────────────────────────────── */
+.contact-form-container { margin-bottom: 40px; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-group { display: flex; flex-direction: column; text-align: left; gap: 8px; }
+.form-group label { font-weight: 600; color: var(--accent); font-size: 0.95em; }
+.form-group input, .form-group textarea {
+    width: 100%; max-width: 100%; padding: 12px 16px; background: var(--bg-control); border: 1px solid var(--control-border); border-radius: 8px;
+    color: var(--text-main); font-family: var(--font-body); font-size: 0.95em; outline: none; transition: var(--transition);
+    min-height: 48px;
 }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
+.form-group textarea { min-height: 120px; resize: vertical; }
+.submit-btn { border: none; cursor: pointer; align-self: flex-start; font-size: 1em; }
+p a, .social-links a { color: var(--accent); text-decoration: none; font-weight: 500; transition: var(--transition); overflow-wrap: anywhere; }
+p a:hover, .social-links a:hover { color: var(--primary); text-decoration: underline; }
+html.i18n-loading body { visibility: hidden; }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
-@media (max-width: 800px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-pic {
-        margin-bottom: 20px;
-    }
-
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .school-image {
-        width: 100%;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .soft-skills,
-    .hard-skills {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================================================
-   COMPOSANTS TEXTE ET CONTENU
-   ========================================================================== */
-.about-intro {
-    font-size: 1.1em;
-    font-weight: 500;
-    color: var(--text-main);
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 15px;
-}
-
-.profile-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.profile-details li {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-}
-
-.profile-details .label {
-    font-weight: 600;
-    color: var(--accent);
-    width: 140px;
-    flex-shrink: 0;
-}
-
-.profile-details .value {
-    color: var(--text-muted);
-}
-
-.highlight-text {
-    font-size: 1.15em;
-    color: var(--text-main);
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.tech-accent {
-    color: var(--accent);
-    font-weight: 600;
-    text-shadow: 0 0 10px var(--accent-glow);
-}
-
-.about-box p {
-    margin: 0 0 12px;
-    line-height: 1.7;
-}
-
-.about-box p:last-child {
-    margin-bottom: 0;
-}
-
-/* ==========================================================================
-   FORMULAIRE DE CONTACT & LIENS
-   ========================================================================== */
-.contact-form-container {
-    margin-bottom: 40px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 8px;
-}
-
-.form-group label {
-    font-weight: 600;
-    color: var(--accent);
-    font-size: 0.95em;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--bg-control);
-    border: 1px solid var(--control-border);
-    border-radius: 8px;
-    color: var(--text-main);
-    font-family: var(--font-body);
-    font-size: 0.95em;
-    outline: none;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px var(--primary-glow);
-}
-
-.submit-btn {
-    border: none;
-    cursor: pointer;
-    align-self: flex-start;
-    font-size: 1em;
-}
-
-p a,
-.social-links a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-p a:hover,
-.social-links a:hover {
-    color: var(--primary);
-    text-decoration: underline;
-}
-
-/* Empêche le flash de traduction au chargement */
-html.i18n-loading body {
-    visibility: hidden;
-}
-
+/* ── Vidéo & carrousel ────────────────────────────────────── */
 .video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    margin: 25px 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--control-border);
+    position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;
+    margin: 25px 0; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); border: 1px solid var(--control-border);
 }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* ==========================================================================
-   CARROUSEL D'IMAGES DES PROJETS
-   ========================================================================== */
 .gallery-carousel {
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin: 25px 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--control-border);
-    background: var(--bg-control);
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) transparent;
+    width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; margin: 25px 0; border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); border: 1px solid var(--control-border); background: var(--bg-control);
+    scrollbar-width: thin; scrollbar-color: var(--primary) transparent;
+    -webkit-overflow-scrolling: touch; scroll-behavior: smooth;
 }
-
-.gallery-carousel::-webkit-scrollbar {
-    height: 8px;
-}
-
-.gallery-carousel::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
-    border-radius: 4px;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 15px;
-    padding: 15px;
-}
-
+.gallery-carousel::-webkit-scrollbar { height: 8px; }
+.gallery-carousel::-webkit-scrollbar-thumb { background-color: var(--primary); border-radius: 4px; }
+.carousel-track { display: flex; gap: 15px; padding: 15px; }
 .carousel-track img {
-    scroll-snap-align: center;
-    flex-shrink: 0;
-    width: 80%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
+    scroll-snap-align: center; flex-shrink: 0; width: 80%; max-width: 500px; height: auto; border-radius: 8px;
+    object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.1); transition: var(--transition);
 }
+.carousel-track img:hover { transform: scale(1.02); border-color: var(--accent); }
 
-.carousel-track img:hover {
-    transform: scale(1.02);
-    border-color: var(--accent);
-}
+/* ── Cartes de projets ────────────────────────────────────── */
+.project { display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 12px; }
+.project-thumb { width: 100%; height: clamp(170px, 48vw, 200px); overflow: hidden; position: relative; background: var(--bg-control); }
+.project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.project:hover .project-thumb img { transform: scale(1.08); }
+.project-info { padding: clamp(16px, 4vw, 20px); flex: 1; }
+.project-info h3 { margin-bottom: 8px; color: var(--primary); font-size: clamp(1.02rem, 4vw, 1.2rem); }
 
-/* ==========================================================================
-   CARTES DE PROJETS AVEC IMAGES DE COUVERTURE
-   ========================================================================== */
-.project {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
+/* ── Logos selon le thème ─────────────────────────────────── */
+.theme-logo-dark { display: none; }
+.theme-logo-light { display: block; }
+:is(html, body).dark-theme .theme-logo-light { display: none; }
+:is(html, body).dark-theme .theme-logo-dark { display: block; }
 
-.project-thumb {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-    background: var(--bg-control);
-}
+/* ── Réalisations (texte + image) & pastilles ─────────────── */
+.contributions { display: flex; flex-direction: column; gap: 32px; }
+.contribution { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.contribution.reverse .contribution-media { order: -1; }
+.contribution-text h4 { margin: 0 0 0.5rem; overflow-wrap: break-word; }
+.contribution-text ul { padding-left: 1.2rem; margin: 0.75rem 0 0; }
+.contribution-media { margin: 0; min-width: 0; }
+.contribution-media img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.contribution-media figcaption { margin-top: 8px; font-size: 0.85rem; opacity: 0.7; text-align: center; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 1rem 0 0; }
+.tech-tags li { padding: 6px 12px; border-radius: 999px; border: 1px solid currentColor; font-size: 0.85rem; opacity: 0.85; }
 
-.project-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.project:hover .project-thumb img {
-    transform: scale(1.08);
-}
-
-.project-info {
-    padding: 20px;
-    flex: 1;
-}
-
-.project-info h3 {
-    margin-bottom: 8px;
-    color: var(--primary);
-}
-
-/* Respecte la préférence système de réduction des animations */
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-.theme-logo-dark {
-    display: none;
-}
-
-.theme-logo-light {
-    display: block;
-}
-
-/* Thème sombre : afficher le logo blanc à la place */
-html.dark-theme .theme-logo-light,
-body.dark-theme .theme-logo-light {
-    display: none;
-}
-
-html.dark-theme .theme-logo-dark,
-body.dark-theme .theme-logo-dark {
-    display: block;
-}
-
-.icon img.icon-large {
-    width: 90px;
-    height: 90px;
-}
-
-.contributions {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-/* Texte à gauche, image à droite */
-.contribution {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    align-items: center;
-}
-
-/* Variante : image à gauche (on remonte la figure avant le texte) */
-.contribution.reverse .contribution-media {
-    order: -1;
-}
-
-.contribution-text h4 {
-    margin: 0 0 0.5rem;
-}
-
-.contribution-text ul {
-    padding-left: 1.2rem;
-    margin: 0.75rem 0 0;
-}
-
-.contribution-media {
-    margin: 0;
-}
-
-.contribution-media img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.contribution-media figcaption {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    opacity: 0.7;
-    text-align: center;
-}
-
-/* Mobile : une seule colonne, texte puis image */
+/* ── Responsive & accessibilité ─────────────────────────────
+   ORDRE : du plus large au plus étroit. Tout ce qui suit = FIX TÉLÉPHONE. */
+@media (max-width: 800px) { .skills-container { grid-template-columns: 1fr; gap: 16px; } }
 @media (max-width: 768px) {
-    .contribution {
-        grid-template-columns: 1fr;
+    .projects-container, .contribution { grid-template-columns: 1fr; }
+    .header-container { flex-direction: column; text-align: center; align-items: center; }
+    /* FIX : centre le texte + le bouton quand on passe en colonne */
+    .header-text { align-items: center; width: 100%; }
+    .profile-pic { margin-bottom: 0; }
+    .about-content { flex-direction: column; align-items: center; }
+    .school-image { width: 100%; max-width: 400px; }
+    .contribution { gap: 0; }
+    .contribution.reverse .contribution-media { order: 0; }
+    /* FIX TÉLÉPHONE n°10 : ANTI-ZOOM iPhone.
+       iOS zoome dès qu'un champ fait moins de 16px. On force 16px sur téléphone. */
+    .form-group input, .form-group textarea { font-size: 16px; }
+    .submit-btn { align-self: stretch; justify-content: center; width: 100%; }
+}
+@media (max-width: 600px) {
+    .soft-skills, .hard-skills { grid-template-columns: 1fr; }
+    /* FIX : nav compacte qui ne déborde plus */
+    .navigation { gap: 4px; padding: 8px; border-radius: 18px; }
+    .navigation a { padding: 10px 12px; font-size: 0.88em; }
+    .theme-toggle-btn, .lang-toggle-btn { margin-left: 0; }
+    .about-box, .skill { padding: 20px 18px; }
+    .carousel-track img { width: 84%; }
+    .profile-details .label { width: 110px; }
+    .profile-details li { align-items: flex-start; }
+    /* FIX : bouton CV pleine largeur au pouce */
+    .cv-button { width: 100%; }
+    .header-text .cv-button { max-width: 340px; }
+}
+/* FIX TÉLÉPHONE n°11 : très petits écrans (iPhone SE 375px, Galaxy 360px) */
+@media (max-width: 380px) {
+    .navigation a { padding: 10px 10px; font-size: 0.84em; }
+    .soft-skills li, .hard-skills li { padding: 18px; }
+    .tech-tags li { font-size: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important; animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;
     }
-
-    .contribution.reverse .contribution-media {
-        order: 0;
-    }
+    .scroll-animate { opacity: 1; transform: none; }
 }

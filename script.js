@@ -43,26 +43,26 @@ const translations = {
         "status-intro": "Étudiante en programmation spécialisée dans le jeu vidéo.",
         "status-p1": "Actuellement en 4ème et dernière année de programmation dans le jeu vidéo à l'école <strong class=\"tech-accent\">Creajeux</strong> à Nîmes en France.",
         "status-p2": "À la recherche d'un <strong class=\"tech-accent\">stage d'une durée de 3 à 6 mois</strong> dans le domaine de la programmation de jeu vidéo.",
-        
+
         "about-me-title": "À propos de moi",
         "about-me-lead": "Passionnée par le code et animée par une grande curiosité technique, je me définis comme une développeuse persévérante, toujours désireuse d'apprendre et d'évoluer.",
         "about-me-p1": "Ce parcours m'a permis d'allier créativité et logique mathématique. J'aime particulièrement m'investir dans des projets de jeux vidéo stimulants qui me poussent à sortir de ma zone de confort. Relever des défis complexes est pour moi le meilleur moyen de dépasser mes limits et de concevoir des systèmes dont je suis fière.",
         "about-me-p2": "Mon objectif principal est de concevoir des expériences interactives fluides, immersives et agréables à jouer. Tout ce processus de création de la première ligne de code au résultat final me passionne et me pousse à donner le meilleur de moi-même pour offrir la meilleure expérience possible aux joueurs.",
-        
+
         "passions-title": "Mes passions",
         "passions-intro": "En dehors de la programmation, mon esprit reste constamment tourné vers la découverte et la création :",
         "passion-games": "<span class=\"passion-tag\">Jeux vidéo</span> : Passionnée de gaming, j'explore tous les genres : du dynamisme compétitif d'<strong>Overwatch</strong> à l'ambiance plus calme de <strong>Cult of the Lamb</strong>.",
         "passion-boardgames": "<span class=\"passion-tag\">Jeux de société</span> : Joueuse régulière de <strong>Magic: The Gathering</strong>, j'apprécie la stratégie et la réflexion autour du deckbuilding.",
         "passion-reading": "<span class=\"passion-tag\">Lecture</span> : Grande dévoreuse de récits, qu'il s'agisse de romans, de bandes dessinées ou de mangas.",
         "passion-creative": "<span class=\"passion-tag\">Créativité</span> : Curieuse d'apprendre dans d'autres domaines artistiques et manuels, je m'intéresse de près à la photographie et à la pâtisserie.",
-        
+
         "now-title": "Actuellement et après",
         "now-lead": "Je suis actuellement en 4ème et dernière année de spécialisation en programmation de jeux vidéo à l'école <strong class=\"tech-accent\">Creajeux</strong> (Nîmes, France).",
         "now-p1": "Dans le cadre de cette fin de cursus, je consacre mon année à la réalisation de notre <strong>projet de soutenance</strong>, un jalon majeur que nous présenterons devant un jury de professionnels en fin d'année.",
-        
+
         "now-badge": "Objectif",
         "now-goal": "À la recherche d'un <strong>stage de 3 à 6 mois</strong> pour concrétiser ma formation et intégrer une équipe de développement.",
-        
+
         "tech-skills-title": "Compétences Techniques",
         "cat-languages": "Langages",
         "cat-engines": "Moteurs, frameworks & services",
@@ -110,7 +110,7 @@ const translations = {
         "contact-discord-link": "Mon profil Discord",
         "contact-github-link": "Mon profil GitHub",
 
-       // Projet After Impact
+        // Projet After Impact
         "ai-intro": "Jeu de survie développé sur Unity.",
         "ai-overview": "Dans un univers post-apocalyptique, le joueur doit gérer ses ressources et ses constantes vitales pour survivre face aux éléments et au temps qui passe.",
         "ai-itch-btn": "Jouer / Voir sur itch.io",
@@ -132,7 +132,7 @@ const translations = {
         "ai-feat-time-p1": "Horloge de jeu synchronisée avec un cycle jour / nuit",
         "ai-feat-time-p2": "Influence directe de l'heure et du climat sur les mécaniques de survie et les stats du joueur",
         "ai-feat-time-caption": "Le cycle jour / nuit",
-        
+
         // Athaza
         "at-intro": "Jeu d'extraction et de survie développé avec SFML.",
         "at-overview": "Athaza est un jeu de survie et d’exploration post-apocalyptique. Restez sur vos gardes, car les humains ne sont pas les seules menaces de ce monde.",
@@ -194,19 +194,40 @@ const translations = {
         "pp-intro": "Développement d'une infrastructure réseau complète et autonome pour le projet de fin d'études.",
         "pp-overview": "Conception technique approfondie de la couche multijoueur et de la synchronisation des données.",
         "pp-contrib-title": "Mes futures réalisations : ",
-        "pp-realisations-p1" : "API Backend (PlayFab-like) : Développement d’une API sur mesure robuste sous ASP.NET Core pour la gestion sécurisée des profils (JWT) et des données de jeu.",
-        "pp-realisations-p2" : "Matchmaking : Algorithme de mise en relation des joueurs basé sur la latence et les compétences via un service d'arrière-plan synchrone.",
-        "pp-realisations-p3" : "Gestion des Lobbies & Instances : Système de synchronisation en temps réel des salons d'attente et du cycle de vie des sessions de jeu.",
-        "pp-realisations-p4" : "Chat temps réel : Intégration d’une messagerie instantanée bidirectionnelle à faible latence optimisée avec SignalR.",
-        
+        "pp-realisations-p1": "API Backend (PlayFab-like) : Développement d’une API sur mesure robuste sous ASP.NET Core pour la gestion sécurisée des profils (JWT) et des données de jeu.",
+        "pp-realisations-p2": "Matchmaking : Algorithme de mise en relation des joueurs basé sur la latence et les compétences via un service d'arrière-plan synchrone.",
+        "pp-realisations-p3": "Gestion des Lobbies & Instances : Système de synchronisation en temps réel des salons d'attente et du cycle de vie des sessions de jeu.",
+        "pp-realisations-p4": "Chat temps réel : Intégration d’une messagerie instantanée bidirectionnelle à faible latence optimisée avec SignalR.",
+
         // Portfolio
-        "portfolio-intro": "Développement de mon site portfolio personnel.",
-        "portfolio-overview": "Vitrine interactive présentant mon parcours et mes projets de jeux vidéo.",
+        "portfolio-intro": "Conception et développement de mon site portfolio personnel.",
+        "portfolio-overview": "Vitrine interactive présentant mon parcours, mes compétences et mes projets de jeux vidéo, avec un CV téléchargeable et une page de contact.",
+        "portfolio-structure": "Le site est organisé en cinq pages : Accueil, À propos, Compétences, Projets et Contact, accessibles depuis une barre de navigation commune.",
         "portfolio-contrib-title": "Réalisations",
         "portfolio-feat-dev-title": "Intégration et design",
         "portfolio-feat-dev-desc": "Création d'un design épuré, responsive et multilingue.",
-        "portfolio-feat-dev-p1": "Structure HTML/CSS moderne avec support bilingue (FR/EN)",
-        "portfolio-feat-dev-p2": "Optimisation pour la lisibilité sur tous types d'écrans",
+        "portfolio-feat-dev-p1": "Structure HTML sémantique (header, nav, section) et feuille de style unique partagée par toutes les pages",
+        "portfolio-feat-dev-p2": "Typographies Inter et Poppins chargées via Google Fonts, avec preconnect pour accélérer leur affichage",
+        "portfolio-feat-dev-p3": "Mise en page responsive pour rester lisible sur ordinateur, tablette et mobile",
+        "portfolio-feat-dev-caption": "Le portfolio sur ordinateur et sur mobile",
+        "portfolio-feat-theme-title": "Thème clair / sombre",
+        "portfolio-feat-theme-desc": "Un bouton dans la navigation change l'apparence de tout le site et mémorise le choix du visiteur.",
+        "portfolio-feat-theme-p1": "Choix du thème enregistré dans le localStorage et retrouvé à chaque visite",
+        "portfolio-feat-theme-p2": "Script placé dans le head, exécuté avant l'affichage de la page, pour éviter le flash blanc au chargement",
+        "portfolio-feat-theme-p3": "Thème piloté par une classe CSS sur la racine du document, donc appliqué à toutes les pages",
+        "portfolio-feat-theme-caption": "Thème clair et thème sombre",
+        "portfolio-feat-lang-title": "Site bilingue FR / EN",
+        "portfolio-feat-lang-desc": "Système de traduction maison : chaque texte est repéré par un attribut data-i18n et remplacé par sa version dans la langue choisie.",
+        "portfolio-feat-lang-p1": "Bouton de langue dans la navigation, choix mémorisé d'une page à l'autre",
+        "portfolio-feat-lang-p2": "Attribut lang du document mis à jour pour l'accessibilité et le référencement",
+        "portfolio-feat-lang-p3": "Contenu masqué le temps de la traduction pour ne pas afficher le français avant l'anglais",
+        "portfolio-feat-lang-caption": "Le site en français et en anglais",
+        "portfolio-feat-a11y-title": "Accessibilité et bonnes pratiques",
+        "portfolio-feat-a11y-desc": "Petites attentions qui rendent le site plus agréable et plus sûr à utiliser.",
+        "portfolio-feat-a11y-p1": "Libellés aria-label sur les boutons de thème et de langue",
+        "portfolio-feat-a11y-p2": "Dimensions width et height sur la photo de profil pour éviter les décalages de mise en page",
+        "portfolio-feat-a11y-p3": "Lien de téléchargement du CV ouvert dans un nouvel onglet avec rel=\"noopener noreferrer\"",
+        "portfolio-feat-a11y-caption": "Navigation et boutons du site",
 
     },
     en: {
@@ -234,26 +255,26 @@ const translations = {
         "status-intro": "Student in programming specialized in video games.",
         "status-p1": "Currently in my 4th and final year of video game programming at <strong class=\"tech-accent\">Creajeux</strong> in Nîmes, France.",
         "status-p2": "Looking for a <strong class=\"tech-accent\">3 to 6-month internship</strong> in video game programming.",
-        
+
         "about-me-title": "About Me",
         "about-me-lead": "Passionate about coding and driven by a strong technical curiosity, I define myself as a persistent developer, always eager to learn and evolve.",
         "about-me-p1": "This journey has allowed me to combine creativity and mathematical logic. I particularly enjoy working on challenging video game projects that push me out of my comfort zone. Overcoming complex technical challenges is the best way for me to exceed my limits and design systems I'm proud of.",
         "about-me-p2": "My main goal is to design smooth, immersive, and enjoyable interactive experiences. The entire creation process, from the first line of code to the final result, fascinates me and drives me to give my best to deliver the best possible player experience.",
-        
+
         "passions-title": "My Passions",
         "passions-intro": "Outside of programming, my mind remains constantly turned toward discovery and creativity:",
         "passion-games": "<span class=\"passion-tag\">Video Games</span>: Passionate gamer, I explore all genres: from the competitive dynamism of <strong>Overwatch</strong> to the calmer vibe of <strong>Cult of the Lamb</strong>.",
         "passion-boardgames": "<span class=\"passion-tag\">Board Games</span>: Regular player of <strong>Magic: The Gathering</strong>, I enjoy deckbuilding strategy and critical thinking.",
         "passion-reading": "<span class=\"passion-tag\">Reading</span>: Avid story consumer, whether it's novels, comics, or manga.",
         "passion-creative": "<span class=\"passion-tag\">Creativity</span>: Curious to learn in other artistic and manual fields, I'm deeply interested in photography and baking.",
-        
+
         "now-title": "Current Status & Next Steps",
         "now-lead": "I am currently in my 4th and final year specializing in video game programming at <strong class=\"tech-accent\">Creajeux</strong> school (Nîmes, France).",
         "now-p1": "As part of my final year, I am dedicating my time to our <strong>graduation project</strong>, a major milestone that we will present to a panel of industry professionals at the end of the year.",
-        
+
         "now-badge": "Goal",
         "now-goal": "Looking for a <strong>3 to 6-month internship</strong> to finalize my education and join a development team.",
-        
+
         "tech-skills-title": "Technical Skills",
         "cat-languages": "Languages",
         "cat-engines": "Engines, Frameworks & Services",
@@ -385,19 +406,40 @@ const translations = {
         "pp-intro": "Development of a complete and autonomous network infrastructure for the graduation project.",
         "pp-overview": "In-depth technical design of the multiplayer layer and data synchronization.",
         "pp-contrib-title": "My future achievements: ",
-        "pp-realisations-p1" : "Backend API (PlayFab-like): Development of a robust custom API under ASP.NET Core for secure profile management (JWT) and game data.",
-        "pp-realisations-p2" : "Matchmaking: Player matching algorithm based on latency and skill via a synchronous background service.",
-        "pp-realisations-p3" : "Lobby & Instance Management: Real-time synchronization system for waiting rooms and game session lifecycles.",
-        "pp-realisations-p4" : "Real-time chat: Integration of a low-latency bidirectional instant messaging system optimized with SignalR.",
+        "pp-realisations-p1": "Backend API (PlayFab-like): Development of a robust custom API under ASP.NET Core for secure profile management (JWT) and game data.",
+        "pp-realisations-p2": "Matchmaking: Player matching algorithm based on latency and skill via a synchronous background service.",
+        "pp-realisations-p3": "Lobby & Instance Management: Real-time synchronization system for waiting rooms and game session lifecycles.",
+        "pp-realisations-p4": "Real-time chat: Integration of a low-latency bidirectional instant messaging system optimized with SignalR.",
 
         // Portfolio
-        "portfolio-intro": "Development of my personal portfolio website.",
-        "portfolio-overview": "Interactive showcase presenting my background and video game projects.",
-        "portfolio-contrib-title": "Key Features",
-        "portfolio-feat-dev-title": "Design & Integration",
-        "portfolio-feat-dev-desc": "Created a clean, responsive, and bilingual web interface.",
-        "portfolio-feat-dev-p1": "Modern HTML/CSS structure with full bilingual support (FR/EN)",
-        "portfolio-feat-dev-p2": "Optimized responsiveness for all screen sizes",
+        "portfolio-intro": "Design and development of my personal portfolio website.",
+        "portfolio-overview": "An interactive showcase of my background, skills and video game projects, with a downloadable résumé and a contact page.",
+        "portfolio-structure": "The site has five pages: Home, About, Skills, Projects and Contact, all reachable from a shared navigation bar.",
+        "portfolio-contrib-title": "Achievements",
+        "portfolio-feat-dev-title": "Integration and design",
+        "portfolio-feat-dev-desc": "A clean, responsive, multilingual design.",
+        "portfolio-feat-dev-p1": "Semantic HTML structure (header, nav, section) and a single stylesheet shared by every page",
+        "portfolio-feat-dev-p2": "Inter and Poppins typefaces loaded through Google Fonts, with preconnect to speed up rendering",
+        "portfolio-feat-dev-p3": "Responsive layout that stays readable on desktop, tablet and mobile",
+        "portfolio-feat-dev-caption": "The portfolio on desktop and mobile",
+        "portfolio-feat-theme-title": "Light / dark theme",
+        "portfolio-feat-theme-desc": "A button in the navigation switches the look of the whole site and remembers the visitor's choice.",
+        "portfolio-feat-theme-p1": "Theme choice saved in localStorage and restored on every visit",
+        "portfolio-feat-theme-p2": "Script placed in the head and run before the page is displayed, to avoid a white flash on load",
+        "portfolio-feat-theme-p3": "Theme driven by a CSS class on the document root, so it applies to every page",
+        "portfolio-feat-theme-caption": "Light theme and dark theme",
+        "portfolio-feat-lang-title": "Bilingual site FR / EN",
+        "portfolio-feat-lang-desc": "A custom translation system: each text is tagged with a data-i18n attribute and replaced by its version in the chosen language.",
+        "portfolio-feat-lang-p1": "Language button in the navigation, choice remembered from page to page",
+        "portfolio-feat-lang-p2": "Document lang attribute updated for accessibility and SEO",
+        "portfolio-feat-lang-p3": "Content hidden while translating, so French is never shown before the English text",
+        "portfolio-feat-lang-caption": "The site in French and in English",
+        "portfolio-feat-a11y-title": "Accessibility and good practices",
+        "portfolio-feat-a11y-desc": "Small details that make the site nicer and safer to use.",
+        "portfolio-feat-a11y-p1": "aria-label on the theme and language buttons",
+        "portfolio-feat-a11y-p2": "width and height set on the profile photo to prevent layout shifts",
+        "portfolio-feat-a11y-p3": "Résumé download link opens in a new tab with rel=\"noopener noreferrer\"",
+        "portfolio-feat-a11y-caption": "Site navigation and buttons",
     }
 };
 
