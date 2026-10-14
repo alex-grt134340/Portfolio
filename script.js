@@ -194,7 +194,11 @@ const translations = {
         "pp-intro": "Développement d'une infrastructure réseau complète et autonome pour le projet de fin d'études.",
         "pp-overview": "Conception technique approfondie de la couche multijoueur et de la synchronisation des données.",
         "pp-contrib-title": "Mes futures réalisations : ",
-
+        "pp-realisations-p1" : "API Backend (PlayFab-like) : Développement d’une API sur mesure robuste sous ASP.NET Core pour la gestion sécurisée des profils (JWT) et des données de jeu.",
+        "pp-realisations-p2" : "Matchmaking : Algorithme de mise en relation des joueurs basé sur la latence et les compétences via un service d'arrière-plan synchrone.",
+        "pp-realisations-p3" : "Gestion des Lobbies & Instances : Système de synchronisation en temps réel des salons d'attente et du cycle de vie des sessions de jeu.",
+        "pp-realisations-p4" : "Chat temps réel : Intégration d’une messagerie instantanée bidirectionnelle à faible latence optimisée avec SignalR.",
+        
         // Portfolio
         "portfolio-intro": "Développement de mon site portfolio personnel.",
         "portfolio-overview": "Vitrine interactive présentant mon parcours et mes projets de jeux vidéo.",
@@ -377,10 +381,14 @@ const translations = {
         "dg-feat-menu-p3": "Programming interactive button functionality across all menus",
         "dg-feat-menu-caption": "Menu / Options",
 
-        // Graduation Project
-        "pp-intro": "Development of a comprehensive and autonomous network infrastructure for the graduation project.",
-        "pp-overview": "Deep technical design focusing on multiplayer architecture and real-time state synchronization.",
-        "pp-contrib-title": "My Future Achievements",
+        // defense Project
+        "pp-intro": "Development of a complete and autonomous network infrastructure for the graduation project.",
+        "pp-overview": "In-depth technical design of the multiplayer layer and data synchronization.",
+        "pp-contrib-title": "My future achievements: ",
+        "pp-realisations-p1" : "Backend API (PlayFab-like): Development of a robust custom API under ASP.NET Core for secure profile management (JWT) and game data.",
+        "pp-realisations-p2" : "Matchmaking: Player matching algorithm based on latency and skill via a synchronous background service.",
+        "pp-realisations-p3" : "Lobby & Instance Management: Real-time synchronization system for waiting rooms and game session lifecycles.",
+        "pp-realisations-p4" : "Real-time chat: Integration of a low-latency bidirectional instant messaging system optimized with SignalR.",
 
         // Portfolio
         "portfolio-intro": "Development of my personal portfolio website.",
