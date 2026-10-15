@@ -197,13 +197,33 @@ const translations = {
         "dg-feat-menu-caption": "Menu et options",
 
         // Projet de soutenance
-        "pp-intro": "Développement d'une infrastructure réseau complète et autonome pour le projet de fin d'études.",
-        "pp-overview": "Conception technique approfondie de la couche multijoueur et de la synchronisation des données.",
-        "pp-contrib-title": "Mes futures réalisations : ",
-        "pp-realisations-p1": "API Backend (PlayFab-like) : Développement d’une API sur mesure robuste sous ASP.NET Core pour la gestion sécurisée des profils (JWT) et des données de jeu.",
-        "pp-realisations-p2": "Matchmaking : Algorithme de mise en relation des joueurs basé sur la latence et les compétences via un service d'arrière-plan synchrone.",
-        "pp-realisations-p3": "Gestion des Lobbies & Instances : Système de synchronisation en temps réel des salons d'attente et du cycle de vie des sessions de jeu.",
-        "pp-realisations-p4": "Chat temps réel : Intégration d’une messagerie instantanée bidirectionnelle à faible latence optimisée avec SignalR.",
+        "pp-intro": "Développement d’une infrastructure réseau complète et autonome (09/2026 - En cours).",
+        "pp-overview": "Ce projet de soutenance vise à concevoir un écosystème backend et multijoueur sur mesure, s'inspirant des solutions cloud gaming professionnelles (type PlayFab) pour offrir une gestion robuste, fluide et temps réel des sessions de jeu.",
+        "pp-contrib-title": "Contributions et briques techniques",
+        "pp-feat-backend-title": "API Backend (PlayFab-like)",
+        "pp-feat-backend-desc": "Architecture d'un service centralisé pour l'authentification et le stockage sécurisé.",
+        "pp-realisations-b1": "Développement d'une API robuste sous ASP.NET Core.",
+        "pp-realisations-b2": "Gestion sécurisée des profils utilisateurs et authentification par tokens JWT.",
+        "pp-realisations-b3": "Centralisation et persistance des données de jeu.",
+        "pp-feat-backend-caption": "Architecture de l'API Backend sécurisée",
+        "pp-feat-matchmaking-title": "Système de Matchmaking intelligent",
+        "pp-feat-matchmaking-desc": "Mise en place d'un service d'arrière-plan synchrone pour optimiser l'équité des parties.",
+        "pp-realisations-m1": "Algorithme de mise en relation dynamique des joueurs.",
+        "pp-realisations-m2": "Critères basés à la fois sur la latence réseau (ping) et le niveau de compétences (skill-based).",
+        "pp-realisations-m3": "Traitement en arrière-plan pour minimiser les temps d'attente.",
+        "pp-feat-matchmaking-caption": "Cycle de traitement du matchmaking",
+        "pp-feat-lobbies-title": "Gestion des Lobbies & Instances",
+        "pp-feat-lobbies-desc": "Orchestration complète du cycle de vie des salons d'attente et des sessions de jeu.",
+        "pp-realisations-l1": "Synchronisation en temps réel des salons d'attente (lobbies).",
+        "pp-realisations-l2": "Suivi et contrôle du cycle de vie des instances de jeu.",
+        "pp-realisations-l3": "Fluidification des transitions entre le menu et la partie active.",
+        "pp-feat-lobbies-caption": "Interface de gestion des salons de jeu",
+        "pp-feat-chat-title": "Chat Temps Réel (SignalR)",
+        "pp-feat-chat-desc": "Intégration d'une messagerie instantanée bidirectionnelle à faible latence.",
+        "pp-realisations-c1": "Utilisation de SignalR pour une communication bidirectionnelle instantanée.",
+        "pp-realisations-c2": "Optimisation des performances pour réduire la latence au minimum.",
+        "pp-realisations-c3": "Intégration fluide au sein de l'infrastructure réseau globale.",
+        "pp-feat-chat-caption": "Module de messagerie instantanée",
 
         // Portfolio
         "portfolio-intro": "Conception et développement de mon site portfolio personnel.",
@@ -416,21 +436,33 @@ const translations = {
         "dg-feat-menu-caption": "Menu / Options",
 
         // defense Project
-        "pp-intro": "Development of a complete and autonomous network infrastructure for the graduation project.",
-        "pp-overview": "In-depth technical design of the multiplayer layer and data synchronization.",
-        "pp-contrib-title": "My future achievements: ",
-        "pp-feat-dev-title" : 
-        "pp-feat-dev-desc" :
-        "pp-realisations-p1": "Backend API (PlayFab-like): Development of a robust custom API under ASP.NET Core for secure profile management (JWT) and game data.",
-        "pp-realisations-p2": "Matchmaking: Player matching algorithm based on latency and skill via a synchronous background service.",
-        "pp-realisations-p3": "Lobby & Instance Management: Real-time synchronization system for waiting rooms and game session lifecycles.",
-        "pp-realisations-p4": "Real-time chat: Integration of a low-latency bidirectional instant messaging system optimized with SignalR.",
-        "pp-feat-dev-caption" :
-        "pp-feat-theme-title" : 
-        "pp-feat-theme-desc" : 
-
-
-
+        "pp-intro": "Development of a complete and autonomous network infrastructure (09/2026 - Present).",
+        "pp-overview": "This thesis project aims to design a custom backend and multiplayer ecosystem inspired by professional cloud gaming solutions (like PlayFab) to provide robust, seamless, and real-time game session management.",
+        "pp-contrib-title": "Contributions and Technical Components",
+        "pp-feat-backend-title": "Backend API (PlayFab-like)",
+        "pp-feat-backend-desc": "Architecture of a centralized service for authentication and secure data storage.",
+        "pp-realisations-b1": "Development of a robust API using ASP.NET Core.",
+        "pp-realisations-b2": "Secure user profile management and JWT token authentication.",
+        "pp-realisations-b3": "Centralization and persistence of game data.",
+        "pp-feat-backend-caption": "Secure Backend API Architecture",
+        "pp-feat-matchmaking-title": "Smart Matchmaking System",
+        "pp-feat-matchmaking-desc": "Implementation of a synchronous background service to optimize match fairness.",
+        "pp-realisations-m1": "Dynamic player matchmaking algorithm.",
+        "pp-realisations-m2": "Criteria based on both network latency (ping) and skill levels (skill-based).",
+        "pp-realisations-m3": "Background processing to minimize queue wait times.",
+        "pp-feat-matchmaking-caption": "Matchmaking processing cycle",
+        "pp-feat-lobbies-title": "Lobbies & Instances Management",
+        "pp-feat-lobbies-desc": "Complete orchestration of the lifecycle of waiting rooms and game sessions.",
+        "pp-realisations-l1": "Real-time synchronization of waiting lobbies.",
+        "pp-realisations-l2": "Tracking and control of game instance lifecycles.",
+        "pp-realisations-l3": "Smoothing transitions between menus and active gameplay.",
+        "pp-feat-lobbies-caption": "Game lobby management interface",
+        "pp-feat-chat-title": "Real-time Chat (SignalR)",
+        "pp-feat-chat-desc": "Integration of a low-latency bidirectional instant messaging system.",
+        "pp-realisations-c1": "Using SignalR for instant bidirectional communication.",
+        "pp-realisations-c2": "Performance optimization to keep latency to a minimum.",
+        "pp-realisations-c3": "Seamless integration within the overall network infrastructure.",
+        "pp-feat-chat-caption": "Instant messaging module",
 
         // Portfolio
         "portfolio-intro": "Design and development of my personal portfolio website.",

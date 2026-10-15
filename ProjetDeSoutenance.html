@@ -63,91 +63,86 @@
         </button>
     </nav>
 
+    <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
     <section>
         <h2>Projet de soutenance</h2>
-        <!-- BOÎTE PRINCIPALE DE PRÉSENTATION -->
         <div class="about-box">
-            <p class="highlight-text" data-i18n="pp-intro"></p>
-            <p data-i18n="pp-overview"></p>
+            <p class="highlight-text" data-i18n="pp-intro">Développement d’une infrastructure réseau complète et
+                autonome (09/2026 - En cours).</p>
+            <p data-i18n="pp-overview">Ce projet de soutenance vise à concevoir un écosystème backend et multijoueur sur
+                mesure, s'inspirant des solutions cloud gaming professionnelles (type PlayFab) pour offrir une gestion
+                robuste, fluide et temps réel des sessions de jeu.</p>
             <ul class="tech-tags">
-                <li>ASP.NET</li>
-                <li>Visual Studio</li>
-                <li>Unity</li>
+                <li>ASP.NET Core</li>
                 <li>C#</li>
+                <li>SignalR</li>
+                <li>Unity</li>
+                <li>Visual Studio</li>
             </ul>
         </div>
-
     </section>
-
 
     <!-- MES CONTRIBUTIONS TECHNIQUES -->
     <section>
-        <h3 data-i18n="pp-contrib-title"></h3>
-        <div class="contributions">
-            <article class="contribution">
-                <div class="contribution-text about-box">
-                    <h4 class="tech-accent" data-i18n="pp-feat-dev-title"></h4>
-                    <p data-i18n="pp-feat-dev-desc"></p>
-                    <ul>
-                        <li data-i18n="pp-realisations-p1"></li>
-                        <li data-i18n="pp-realisations-p2"></li>
-                        <li data-i18n="pp-realisations-p3"></li>
-                    </ul>
-                </div>
-                <figure class="contribution-media">
-                    <img src="assets/images/projectPerso/design.png" alt="Aperçu de l'api" loading="lazy">
-                    <figcaption data-i18n="pp-feat-dev-caption"></figcaption>
-                </figure>
+        <h3 data-i18n="pp-contrib-title">Contributions et briques techniques</h3>
+        <div class="contributions" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+            <!-- 1. API Backend (PlayFab-like) -->
+            <article class="contribution about-box">
+                <h4 class="tech-accent" data-i18n="pp-feat-backend-title">API Backend (PlayFab-like)</h4>
+                <p data-i18n="pp-feat-backend-desc">Architecture d'un service centralisé pour l'authentification et le
+                    stockage sécurisé.</p>
+                <ul>
+                    <li data-i18n="pp-realisations-b1">Développement d'une API robuste sous ASP.NET Core.</li>
+                    <li data-i18n="pp-realisations-b2">Gestion sécurisée des profils utilisateurs et authentification
+                        par tokens JWT.</li>
+                    <li data-i18n="pp-realisations-b3">Centralisation et persistance des données de jeu.</li>
+                </ul>
             </article>
 
-            <article class="contribution reverse">
-                <div class="contribution-text about-box">
-                    <h4 class="tech-accent" data-i18n="pp-feat-theme-title"></h4>
-                    <p data-i18n="pp-feat-theme-desc"></p>
-                    <ul>
-                        <li data-i18n="pp-feat-theme-p1"></li>
-                        <li data-i18n="pp-feat-theme-p2"></li>
-                        <li data-i18n="pp-feat-theme-p3"></li>
-                    </ul>
-                </div>
-                <figure class="contribution-media">
-                    <img src="assets/images/pp/theme.png" alt="Comparaison du thème clair et du thème sombre"
-                        loading="lazy">
-                    <figcaption data-i18n="pp-feat-theme-caption"></figcaption>
-                </figure>
+            <!-- 2. Matchmaking -->
+            <article class="contribution about-box">
+                <h4 class="tech-accent" data-i18n="pp-feat-matchmaking-title">Système de Matchmaking intelligent</h4>
+                <p data-i18n="pp-feat-matchmaking-desc">Mise en place d'un service d'arrière-plan synchrone pour
+                    optimiser l'équité des parties.</p>
+                <ul>
+                    <li data-i18n="pp-realisations-m1">Algorithme de mise en relation dynamique des joueurs.</li>
+                    <li data-i18n="pp-realisations-m2">Critères basés à la fois sur la latence réseau (ping) et le
+                        niveau de compétences (skill-based).</li>
+                    <li data-i18n="pp-realisations-m3">Traitement en arrière-plan pour minimiser les temps d'attente.
+                    </li>
+                </ul>
             </article>
 
-            <article class="contribution">
-                <div class="contribution-text about-box">
-                    <h4 class="tech-accent" data-i18n="pp-feat-lang-title"></h4>
-                    <p data-i18n="pp-feat-lang-desc"></p>
-                    <ul>
-                        <li data-i18n="pp-feat-lang-p1"></li>
-                        <li data-i18n="pp-feat-lang-p2"></li>
-                        <li data-i18n="pp-feat-lang-p3"></li>
-                    </ul>
-                </div>
-                <figure class="contribution-media">
-                    <img src="assets/images/pp/lang.png" alt="Le site en français et en anglais" loading="lazy">
-                    <figcaption data-i18n="pp-feat-lang-caption"></figcaption>
-                </figure>
+            <!-- 3. Gestion des Lobbies & Instances -->
+            <article class="contribution about-box">
+                <h4 class="tech-accent" data-i18n="pp-feat-lobbies-title">Gestion des Lobbies & Instances</h4>
+                <p data-i18n="pp-feat-lobbies-desc">Orchestration complète du cycle de vie des salons d'attente et des
+                    sessions de jeu.</p>
+                <ul>
+                    <li data-i18n="pp-realisations-l1">Synchronisation en temps réel des salons d'attente (lobbies).
+                    </li>
+                    <li data-i18n="pp-realisations-l2">Suivi et contrôle du cycle de vie des instances de jeu.</li>
+                    <li data-i18n="pp-realisations-l3">Fluidification des transitions entre le menu et la partie active.
+                    </li>
+                </ul>
             </article>
 
-            <article class="contribution reverse">
-                <div class="contribution-text about-box">
-                    <h4 class="tech-accent" data-i18n="pp-feat-a11y-title"></h4>
-                    <p data-i18n="pp-feat-a11y-desc"></p>
-                    <ul>
-                        <li data-i18n="pp-feat-a11y-p1"></li>
-                        <li data-i18n="pp-feat-a11y-p2"></li>
-                        <li data-i18n="pp-feat-a11y-p3"></li>
-                    </ul>
-                </div>
-                <figure class="contribution-media">
-                    <img src="assets/images/pp/bouton.png" Navigation et boutons du portfolio" loading="lazy">
-                    <figcaption data-i18n="pp-feat-a11y-caption"></figcaption>
-                </figure>
+            <!-- 4. Chat temps réel -->
+            <article class="contribution about-box">
+                <h4 class="tech-accent" data-i18n="pp-feat-chat-title">Chat Temps Réel (SignalR)</h4>
+                <p data-i18n="pp-feat-chat-desc">Intégration d'une messagerie instantanée bidirectionnelle à faible
+                    latence.</p>
+                <ul>
+                    <li data-i18n="pp-realisations-c1">Utilisation de SignalR pour une communication bidirectionnelle
+                        instantanée.</li>
+                    <li data-i18n="pp-realisations-c2">Optimisation des performances pour réduire la latence au minimum.
+                    </li>
+                    <li data-i18n="pp-realisations-c3">Intégration fluide au sein de l'infrastructure réseau globale.
+                    </li>
+                </ul>
             </article>
+
         </div>
     </section>
 
