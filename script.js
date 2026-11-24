@@ -115,7 +115,8 @@ const translations = {
         "contact-linkedin-link": "Mon profil LinkedIn",
         "contact-discord-link": "Mon profil Discord",
         "contact-github-link": "Mon profil GitHub",
-
+        "contact-itchio-link": "Mon profil Itchio",
+        
         // Projet After Impact
         "ai-intro": "Jeu de survie développé sur Unity.",
         "ai-overview": "Dans un univers post-apocalyptique, le joueur doit gérer ses ressources et ses constantes vitales pour survivre face aux éléments et au temps qui passe.",
@@ -354,6 +355,7 @@ const translations = {
         "contact-linkedin-link": "My LinkedIn profile",
         "contact-discord-link": "My Discord profile",
         "contact-github-link": "My GitHub profile",
+        "contact-itchio-link" : "My Itchio profile",
 
         // Project After Impact
         "ai-intro": "Survival game developed with Unity.",
